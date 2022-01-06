@@ -20,10 +20,10 @@ nbclient.exceptions.CellExecutionError: An error occurred while executing the fo
 print("Hallo Welt!"
 ------------------
 
-[1;36m  File [1;32m"C:\Users\nitra\AppData\Local\Temp/ipykernel_5464/380194409.py"[1;36m, line [1;32m1[0m
+[1;36m  File [1;32m"C:\Users\nitra\AppData\Local\Temp/ipykernel_26372/380194409.py"[1;36m, line [1;32m1[0m
 [1;33m    print("Hallo Welt!"[0m
 [1;37m                       ^[0m
 [1;31mSyntaxError[0m[1;31m:[0m unexpected EOF while parsing
 
-SyntaxError: unexpected EOF while parsing (Temp/ipykernel_5464/380194409.py, line 1)
+SyntaxError: unexpected EOF while parsing (Temp/ipykernel_26372/380194409.py, line 1)
 

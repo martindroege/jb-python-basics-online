@@ -1,0 +1,7 @@
+requests
+nltk
+bs4
+pandas
+seaborn
+matplotlib
+bokeh
