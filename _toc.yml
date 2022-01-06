@@ -1,0 +1,34 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro.md
+parts:
+- caption: Allgemeines
+  chapters:
+  - file: markdowns/block_0_einstieg.md
+    title: Einstieg
+  - file: markdowns/block_1_historie.md
+    title: Historie, Konzepte, Einsatz
+  - file: markdowns/block_2_erste_schritte.md
+    title: Erste Schritte
+- caption: Grundlagen
+  chapters:
+  - file: notebooks/01-Datentypen.ipynb
+    title: Datentypen
+  - file: notebooks/02-Error-Handling.ipynb
+    title: Error Handling und Kontrollstrukturen
+  - file: notebooks/03-Pseudocode.ipynb
+    title: Pseudocode
+  - file: notebooks/04-Funktionen-Textprocessing.ipynb
+    title: Funktionen
+- caption: Erste Anwendungen
+  chapters: 
+  - file: notebooks/05-NLTK-Visualisieren.ipynb
+    title: Worthäufigkeiten visualisieren
+  - file: notebooks/06-Web-Scraping.ipynb
+    title: Web Scraping
+- caption: Ressourcen
+  chapters:
+  - file: notebooks/07-Hilfe-zur-Selbsthilfe.ipynb
+    title: Hilfe zur Selbsthilfe

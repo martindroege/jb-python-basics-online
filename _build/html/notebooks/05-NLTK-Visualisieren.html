@@ -1,0 +1,834 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NLTK und Worthäufigkeiten visualisieren &#8212; Python Basics Jupyter Book Showcase</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Web Scraping" href="06-Web-Scraping.html" />
+    <link rel="prev" title="Funktionen Textprocessing" href="04-Funktionen-Textprocessing.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/Logo_DigitalHistoryBerlin.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Python Basics Jupyter Book Showcase</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Einführung
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Allgemeines
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../markdowns/block_0_einstieg.html">
+   Einstieg
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../markdowns/block_1_historie.html">
+   Historie, Konzepte, Einsatz
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../markdowns/block_2_erste_schritte.html">
+   Erste Schritte
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Grundlagen
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-Datentypen.html">
+   Datentypen
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-Error-Handling.html">
+   Error Handling und Kontrollstrukturen
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03-Pseudocode.html">
+   Pseudocode
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04-Funktionen-Textprocessing.html">
+   Funktionen
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Erste Anwendungen
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Worthäufigkeiten visualisieren
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06-Web-Scraping.html">
+   Web Scraping
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Ressourcen
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="07-Hilfe-zur-Selbsthilfe.html">
+   Hilfe zur Selbsthilfe
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notebooks/05-NLTK-Visualisieren.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/notebooks/05-NLTK-Visualisieren.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#collections">
+   collections
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nltk">
+   NLTK
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#concordance">
+   concordance
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#similar">
+   similar
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dispersion-plot">
+   dispersion plot
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <!-- Table of contents that is only displayed when printing the page -->
+    <div id="jb-print-docs-body" class="onlyprint">
+        <h1>NLTK und Worthäufigkeiten visualisieren</h1>
+        <!-- Table of contents -->
+        <div id="print-main-content" class="row">
+            <div class="col-12 col-md-12 pl-md-5 pr-md-5">
+            <div id="jb-print-toc">
+                
+                <div>
+                    <h2> Contents </h2>
+                </div>
+                <nav aria-label="Page">
+                    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#collections">
+   collections
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nltk">
+   NLTK
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#concordance">
+   concordance
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#similar">
+   similar
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dispersion-plot">
+   dispersion plot
+  </a>
+ </li>
+</ul>
+
+                </nav>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="nltk-und-worthaufigkeiten-visualisieren">
+<h1>NLTK und Worthäufigkeiten visualisieren<a class="headerlink" href="#nltk-und-worthaufigkeiten-visualisieren" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="collections">
+<h2>collections<a class="headerlink" href="#collections" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+
+<span class="n">freq</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">grundgesetz_words</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_18540</span><span class="o">/</span><span class="mf">2138696804.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> 
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">freq</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">grundgesetz_words</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;grundgesetz_words&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">freq</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>collections.Counter
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">freq</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;artikel&#39;, 263),
+ (&#39;1&#39;, 219),
+ (&#39;2&#39;, 201),
+ (&#39;3&#39;, 131),
+ (&#39;länder&#39;, 112),
+ (&#39;absatz&#39;, 98),
+ (&#39;zustimmung&#39;, 96),
+ (&#39;bundesrates&#39;, 95),
+ (&#39;bund&#39;, 85),
+ (&#39;bundesregierung&#39;, 84),
+ (&#39;soweit&#39;, 80),
+ (&#39;bundesgesetz&#39;, 78),
+ (&#39;bundes&#39;, 73),
+ (&#39;gesetz&#39;, 65),
+ (&#39;4&#39;, 65),
+ (&#39;bundestages&#39;, 58),
+ (&#39;ländern&#39;, 57),
+ (&#39;bundestag&#39;, 55),
+ (&#39;bedarf&#39;, 46),
+ (&#39;satz&#39;, 43),
+ (&#39;gemeinden&#39;, 42),
+ (&#39;mehrheit&#39;, 41),
+ (&#39;5&#39;, 39),
+ (&#39;gesetze&#39;, 39),
+ (&#39;bestimmt&#39;, 39)]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="nltk">
+<h2>NLTK<a class="headerlink" href="#nltk" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nltk</span>
+<span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">word_tokenize</span>
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;punkt&#39;</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;grundgesetz.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
+    <span class="n">text_raw</span> <span class="o">=</span> <span class="n">infile</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="n">text</span> <span class="o">=</span> <span class="n">text_raw</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="n">text</span> <span class="o">=</span> <span class="n">word_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<span class="n">text</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">Text</span><span class="p">(</span><span class="n">text</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data] Downloading package punkt to /root/nltk_data...
+[nltk_data]   Unzipping tokenizers/punkt.zip.
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="concordance">
+<h2>concordance<a class="headerlink" href="#concordance" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span><span class="o">.</span><span class="n">concordance</span><span class="p">(</span><span class="s2">&quot;bund&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">110</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Displaying 25 of 85 matches:
+artikel 10 absatz 2 satz 2 bleibt unberührt . ii der bund und die länder artikel 20 ( 1 ) die bundesrepublik d
+vergleichbaren grundrechtsschutz gewährleistet . der bund kann hierzu durch gesetz mit zustimmung des bundesra
+n der länder berührt sind oder soweit im übrigen der bund das recht zur gesetzgebung hat , berücksichtigt die 
+ ausgabenerhöhungen oder einnahmeminderungen für den bund führen können , ist die zustimmung der bundesregieru
+ mitgliedstaat der europäischen union zustehen , vom bund auf einen vom bundesrat benannten vertreter der länd
+immung des bundesrates bedarf . artikel 24 ( 1 ) der bund kann durch gesetz hoheitsrechte auf zwischenstaatlic
+hbarschaftliche einrichtungen übertragen . ( 2 ) der bund kann sich zur wahrung des friedens einem system gege
+regelung zwischenstaatlicher streitigkeiten wird der bund vereinbarungen über eine allgemeine , umfassende , o
+de wirtschaftskraftbezogene steuerquelle . ( 3 ) der bund gewährleistet , daß die verfassungsmäßige ordnung de
+3. artikel 59 ( 1 ) der bundespräsident vertritt den bund völkerrechtlich . er schließt im namen des bundes di
+s bestimmt ist . ( 2 ) er übt im einzelfalle für den bund das begnadigungsrecht aus . ( 3 ) er kann diese befu
+ht . ( 2 ) die abgrenzung der zuständigkeit zwischen bund und ländern bemißt sich nach den vorschriften dieses
+e befugnis zur gesetzgebung , solange und soweit der bund von seiner gesetzgebungszuständigkeit nicht durch ge
+ nicht durch gesetz gebrauch gemacht hat . ( 2 ) der bund hat in diesem bereich das gesetzgebungsrecht , wenn 
+rch landesrecht ersetzt werden kann . artikel 73 der bund hat die ausschließliche gesetzgebung über : 1. die a
+er zustimmung des bundesrates . artikel 75 ( 1 ) der bund hat das recht , unter den voraussetzungen des artike
+bar geltende regelungen enthalten . ( 3 ) erläßt der bund rahmenvorschriften , so sind die länder verpflichtet
+e zu allen behörden entsenden . artikel 86 führt der bund die gesetze durch bundeseigene verwaltung oder durch
+undestages errichtet werden . artikel 87 a ( 1 ) der bund stellt streitkräfte zur verteidigung auf . ihre zahl
+s eigene angelegenheit übertragen werden . ( 2 ) der bund nimmt die über den bereich der eisenbahnen des bunde
+eit der anteile an diesen unternehmen verbleibt beim bund . das nähere wird durch bundesgesetz geregelt . ( 4 
+ nähere wird durch bundesgesetz geregelt . ( 4 ) der bund gewährleistet , daß dem wohl der allgemeinheit , ins
+ustimmung des bundesrates bedarf , gewährleistet der bund im bereich des postwesens und der telekommunikation 
+ . ( 3 ) unbeschadet des absatzes 2 satz 2 führt der bund in der rechtsform einer bundesunmittelbaren anstalt 
+ch maßgabe eines bundesgesetzes aus . artikel 88 der bund errichtet eine währungs- und notenbank als bundesban
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="similar">
+<h2>similar<a class="headerlink" href="#similar" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span><span class="o">.</span><span class="n">similar</span><span class="p">(</span><span class="s2">&quot;freiheit&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>bestimmungen gesetzgebung stelle grundsätze zustimmung mitglieder die
+von feststellung artikel vor einheit grundrechte würde rechte aus
+vorschriften pflege fürsorge teilnahme
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="dispersion-plot">
+<h2>dispersion plot<a class="headerlink" href="#dispersion-plot" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span><span class="o">.</span><span class="n">dispersion_plot</span><span class="p">([</span><span class="s2">&quot;artikel&quot;</span><span class="p">,</span> <span class="s2">&quot;gesetz&quot;</span><span class="p">,</span> <span class="s2">&quot;freiheit&quot;</span><span class="p">,</span> <span class="s1">&#39;bundespräsident&#39;</span><span class="p">,</span> <span class="s1">&#39;bundeskanzler&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/05-NLTK-Visualisieren_11_0.png" src="../_images/05-NLTK-Visualisieren_11_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">freq</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;word&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">])</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;count&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">df_top_25</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;word&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;count&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df_top_25</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">labels</span><span class="o">=</span><span class="n">df_top_25</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;word&#39;</span><span class="p">],</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/05-NLTK-Visualisieren_14_0.png" src="../_images/05-NLTK-Visualisieren_14_0.png" />
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "base2exp"
+        },
+        kernelOptions: {
+            kernelName: "base2exp",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'base2exp'</script>
+
+              </div>
+              
+            </div>
+        </div>
+    </div>
+    <div id="main-content" class="row noprint">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="nltk-und-worthaufigkeiten-visualisieren">
+<h1>NLTK und Worthäufigkeiten visualisieren<a class="headerlink" href="#nltk-und-worthaufigkeiten-visualisieren" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="collections">
+<h2>collections<a class="headerlink" href="#collections" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+
+<span class="n">freq</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">grundgesetz_words</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_18540</span><span class="o">/</span><span class="mf">2138696804.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> 
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">freq</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">grundgesetz_words</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;grundgesetz_words&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">freq</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>collections.Counter
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">freq</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;artikel&#39;, 263),
+ (&#39;1&#39;, 219),
+ (&#39;2&#39;, 201),
+ (&#39;3&#39;, 131),
+ (&#39;länder&#39;, 112),
+ (&#39;absatz&#39;, 98),
+ (&#39;zustimmung&#39;, 96),
+ (&#39;bundesrates&#39;, 95),
+ (&#39;bund&#39;, 85),
+ (&#39;bundesregierung&#39;, 84),
+ (&#39;soweit&#39;, 80),
+ (&#39;bundesgesetz&#39;, 78),
+ (&#39;bundes&#39;, 73),
+ (&#39;gesetz&#39;, 65),
+ (&#39;4&#39;, 65),
+ (&#39;bundestages&#39;, 58),
+ (&#39;ländern&#39;, 57),
+ (&#39;bundestag&#39;, 55),
+ (&#39;bedarf&#39;, 46),
+ (&#39;satz&#39;, 43),
+ (&#39;gemeinden&#39;, 42),
+ (&#39;mehrheit&#39;, 41),
+ (&#39;5&#39;, 39),
+ (&#39;gesetze&#39;, 39),
+ (&#39;bestimmt&#39;, 39)]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="nltk">
+<h2>NLTK<a class="headerlink" href="#nltk" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nltk</span>
+<span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">word_tokenize</span>
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;punkt&#39;</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;grundgesetz.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
+    <span class="n">text_raw</span> <span class="o">=</span> <span class="n">infile</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="n">text</span> <span class="o">=</span> <span class="n">text_raw</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="n">text</span> <span class="o">=</span> <span class="n">word_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<span class="n">text</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">Text</span><span class="p">(</span><span class="n">text</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data] Downloading package punkt to /root/nltk_data...
+[nltk_data]   Unzipping tokenizers/punkt.zip.
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="concordance">
+<h2>concordance<a class="headerlink" href="#concordance" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span><span class="o">.</span><span class="n">concordance</span><span class="p">(</span><span class="s2">&quot;bund&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">110</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Displaying 25 of 85 matches:
+artikel 10 absatz 2 satz 2 bleibt unberührt . ii der bund und die länder artikel 20 ( 1 ) die bundesrepublik d
+vergleichbaren grundrechtsschutz gewährleistet . der bund kann hierzu durch gesetz mit zustimmung des bundesra
+n der länder berührt sind oder soweit im übrigen der bund das recht zur gesetzgebung hat , berücksichtigt die 
+ ausgabenerhöhungen oder einnahmeminderungen für den bund führen können , ist die zustimmung der bundesregieru
+ mitgliedstaat der europäischen union zustehen , vom bund auf einen vom bundesrat benannten vertreter der länd
+immung des bundesrates bedarf . artikel 24 ( 1 ) der bund kann durch gesetz hoheitsrechte auf zwischenstaatlic
+hbarschaftliche einrichtungen übertragen . ( 2 ) der bund kann sich zur wahrung des friedens einem system gege
+regelung zwischenstaatlicher streitigkeiten wird der bund vereinbarungen über eine allgemeine , umfassende , o
+de wirtschaftskraftbezogene steuerquelle . ( 3 ) der bund gewährleistet , daß die verfassungsmäßige ordnung de
+3. artikel 59 ( 1 ) der bundespräsident vertritt den bund völkerrechtlich . er schließt im namen des bundes di
+s bestimmt ist . ( 2 ) er übt im einzelfalle für den bund das begnadigungsrecht aus . ( 3 ) er kann diese befu
+ht . ( 2 ) die abgrenzung der zuständigkeit zwischen bund und ländern bemißt sich nach den vorschriften dieses
+e befugnis zur gesetzgebung , solange und soweit der bund von seiner gesetzgebungszuständigkeit nicht durch ge
+ nicht durch gesetz gebrauch gemacht hat . ( 2 ) der bund hat in diesem bereich das gesetzgebungsrecht , wenn 
+rch landesrecht ersetzt werden kann . artikel 73 der bund hat die ausschließliche gesetzgebung über : 1. die a
+er zustimmung des bundesrates . artikel 75 ( 1 ) der bund hat das recht , unter den voraussetzungen des artike
+bar geltende regelungen enthalten . ( 3 ) erläßt der bund rahmenvorschriften , so sind die länder verpflichtet
+e zu allen behörden entsenden . artikel 86 führt der bund die gesetze durch bundeseigene verwaltung oder durch
+undestages errichtet werden . artikel 87 a ( 1 ) der bund stellt streitkräfte zur verteidigung auf . ihre zahl
+s eigene angelegenheit übertragen werden . ( 2 ) der bund nimmt die über den bereich der eisenbahnen des bunde
+eit der anteile an diesen unternehmen verbleibt beim bund . das nähere wird durch bundesgesetz geregelt . ( 4 
+ nähere wird durch bundesgesetz geregelt . ( 4 ) der bund gewährleistet , daß dem wohl der allgemeinheit , ins
+ustimmung des bundesrates bedarf , gewährleistet der bund im bereich des postwesens und der telekommunikation 
+ . ( 3 ) unbeschadet des absatzes 2 satz 2 führt der bund in der rechtsform einer bundesunmittelbaren anstalt 
+ch maßgabe eines bundesgesetzes aus . artikel 88 der bund errichtet eine währungs- und notenbank als bundesban
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="similar">
+<h2>similar<a class="headerlink" href="#similar" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span><span class="o">.</span><span class="n">similar</span><span class="p">(</span><span class="s2">&quot;freiheit&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>bestimmungen gesetzgebung stelle grundsätze zustimmung mitglieder die
+von feststellung artikel vor einheit grundrechte würde rechte aus
+vorschriften pflege fürsorge teilnahme
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="dispersion-plot">
+<h2>dispersion plot<a class="headerlink" href="#dispersion-plot" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span><span class="o">.</span><span class="n">dispersion_plot</span><span class="p">([</span><span class="s2">&quot;artikel&quot;</span><span class="p">,</span> <span class="s2">&quot;gesetz&quot;</span><span class="p">,</span> <span class="s2">&quot;freiheit&quot;</span><span class="p">,</span> <span class="s1">&#39;bundespräsident&#39;</span><span class="p">,</span> <span class="s1">&#39;bundeskanzler&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/05-NLTK-Visualisieren_11_0.png" src="../_images/05-NLTK-Visualisieren_11_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">freq</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;word&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">])</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;count&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">df_top_25</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;word&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;count&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df_top_25</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">labels</span><span class="o">=</span><span class="n">df_top_25</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;word&#39;</span><span class="p">],</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/05-NLTK-Visualisieren_14_0.png" src="../_images/05-NLTK-Visualisieren_14_0.png" />
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "base2exp"
+        },
+        kernelOptions: {
+            kernelName: "base2exp",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'base2exp'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="04-Funktionen-Textprocessing.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Funktionen Textprocessing</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="06-Web-Scraping.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Web Scraping</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Martin Dröge<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
