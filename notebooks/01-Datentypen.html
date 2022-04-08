@@ -1,0 +1,1297 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Datentypen &#8212; Python Basics Jupyter Book Showcase</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="error handling und Kontrollstrukturen" href="02-Error-Handling.html" />
+    <link rel="prev" title="Erste Schritte" href="../markdowns/block_2_erste_schritte.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/Logo_DigitalHistoryBerlin.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Python Basics Jupyter Book Showcase</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Einführung
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Allgemeines
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../markdowns/block_0_einstieg.html">
+   Einstieg
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../markdowns/block_1_historie.html">
+   Historie, Konzepte, Einsatz
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../markdowns/block_2_erste_schritte.html">
+   Erste Schritte
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Grundlagen
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Datentypen
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-Error-Handling.html">
+   Error Handling und Kontrollstrukturen
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03-Pseudocode.html">
+   Pseudocode
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04-Funktionen-Textprocessing.html">
+   Funktionen
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Erste Anwendungen
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="05-NLTK-Visualisieren.html">
+   Worthäufigkeiten visualisieren
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06-Web-Scraping.html">
+   Web Scraping
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Ressourcen
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="07-Hilfe-zur-Selbsthilfe.html">
+   Hilfe zur Selbsthilfe
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notebooks/01-Datentypen.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/martindroege/jb-python-basics-online"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/martindroege/jb-python-basics-online/main?urlpath=lab/tree/docs/notebooks/01-Datentypen.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#zeichenketten-strings">
+   Zeichenketten / Strings
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#konkatenieren">
+   Konkatenieren
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#variablen">
+   Variablen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#f-strings">
+   f-Strings
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#funktionen-und-methoden-bei-strings">
+   Funktionen und Methoden bei Strings
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#listen-lists">
+   Listen / Lists
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#zuordnungen-dictionaries">
+   Zuordnungen / Dictionaries
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mengen-sets">
+   Mengen / Sets
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tuple">
+   Tuple
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indexieren-von-strings">
+   Indexieren von Strings
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#slicing">
+   Slicing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indexieren-von-listen">
+   Indexieren von Listen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#funktionen-und-methoden-bei-listen">
+   Funktionen und Methoden bei Listen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#zugriff-auf-dictionaries">
+   Zugriff auf Dictionaries
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#logische-ausdrucke">
+   Logische Ausdrücke
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#logische-ausdrucke-and-or">
+   Logische Ausdrücke: and, or
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#user-input-skript">
+   User-Input Skript
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <!-- Table of contents that is only displayed when printing the page -->
+    <div id="jb-print-docs-body" class="onlyprint">
+        <h1>Datentypen</h1>
+        <!-- Table of contents -->
+        <div id="print-main-content" class="row">
+            <div class="col-12 col-md-12 pl-md-5 pr-md-5">
+            <div id="jb-print-toc">
+                
+                <div>
+                    <h2> Contents </h2>
+                </div>
+                <nav aria-label="Page">
+                    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#zeichenketten-strings">
+   Zeichenketten / Strings
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#konkatenieren">
+   Konkatenieren
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#variablen">
+   Variablen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#f-strings">
+   f-Strings
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#funktionen-und-methoden-bei-strings">
+   Funktionen und Methoden bei Strings
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#listen-lists">
+   Listen / Lists
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#zuordnungen-dictionaries">
+   Zuordnungen / Dictionaries
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mengen-sets">
+   Mengen / Sets
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tuple">
+   Tuple
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indexieren-von-strings">
+   Indexieren von Strings
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#slicing">
+   Slicing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indexieren-von-listen">
+   Indexieren von Listen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#funktionen-und-methoden-bei-listen">
+   Funktionen und Methoden bei Listen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#zugriff-auf-dictionaries">
+   Zugriff auf Dictionaries
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#logische-ausdrucke">
+   Logische Ausdrücke
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#logische-ausdrucke-and-or">
+   Logische Ausdrücke: and, or
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#user-input-skript">
+   User-Input Skript
+  </a>
+ </li>
+</ul>
+
+                </nav>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="datentypen">
+<h1>Datentypen<a class="headerlink" href="#datentypen" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="zeichenketten-strings">
+<h2>Zeichenketten / Strings<a class="headerlink" href="#zeichenketten-strings" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hallo Welt!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hallo Welt!
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="konkatenieren">
+<h2>Konkatenieren<a class="headerlink" href="#konkatenieren" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hallo &quot;</span> <span class="o">+</span> <span class="s2">&quot;Welt!&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Digital History Tagung &quot;</span> <span class="o">+</span> <span class="s2">&quot;2021&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="s2">&quot;bar &quot;</span> <span class="o">*</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hallo Welt!
+Digital History Tagung 2021
+foofoobar bar bar 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="variablen">
+<h2>Variablen<a class="headerlink" href="#variablen" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">event</span> <span class="o">=</span> <span class="s2">&quot;Digital History Tagung&quot;</span>
+<span class="n">year</span> <span class="o">=</span> <span class="mi">2021</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="f-strings">
+<h2>f-Strings<a class="headerlink" href="#f-strings" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Die </span><span class="si">{</span><span class="n">event</span><span class="si">}</span><span class="s2"> findet </span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s2"> statt.&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Die </span><span class="si">{}</span><span class="s2"> findet </span><span class="si">{}</span><span class="s2"> statt.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">year</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Die Digital History Tagung findet 2021 statt.
+Die Digital History Tagung findet 2021 statt.
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="funktionen-und-methoden-bei-strings">
+<h2>Funktionen und Methoden bei Strings<a class="headerlink" href="#funktionen-und-methoden-bei-strings" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">event</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="s2">&quot;Digital History Tagung&quot;</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Digital History Tagung&quot;</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22
+22
+digital history tagung
+DIGITAL HISTORY TAGUNG
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="listen-lists">
+<h2>Listen / Lists<a class="headerlink" href="#listen-lists" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list_1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+
+<span class="n">list_2</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Banane&quot;</span><span class="p">,</span> <span class="s2">&quot;Apfel&quot;</span><span class="p">,</span> <span class="s2">&quot;Birne&quot;</span><span class="p">]</span>
+
+<span class="n">list_3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">17</span><span class="p">,</span> <span class="s2">&quot;Obst&quot;</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="s2">&quot;Ball&quot;</span><span class="p">]</span>
+
+<span class="n">list_4</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,],</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Hallo&quot;</span><span class="p">,</span> <span class="s2">&quot;Welt&quot;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="zuordnungen-dictionaries">
+<h2>Zuordnungen / Dictionaries<a class="headerlink" href="#zuordnungen-dictionaries" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dict_1</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Banane&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> 
+          <span class="s2">&quot;Apfel&quot;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span> 
+          <span class="s2">&quot;Birne&quot;</span><span class="p">:</span> <span class="mi">9</span><span class="p">}</span>
+
+<span class="n">dict_2</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Vorname&quot;</span><span class="p">:</span> <span class="s2">&quot;Monty&quot;</span><span class="p">,</span> 
+          <span class="s2">&quot;Nachname&quot;</span><span class="p">:</span> <span class="s2">&quot;Python&quot;</span><span class="p">,</span> 
+          <span class="s2">&quot;Alter&quot;</span><span class="p">:</span> <span class="mi">48</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="mengen-sets">
+<h2>Mengen / Sets<a class="headerlink" href="#mengen-sets" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">menge</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">menge</span><span class="p">)</span>
+
+<span class="nb">type</span><span class="p">(</span><span class="n">menge</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1, 2, 3, 4, 5}
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>set
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="tuple">
+<h2>Tuple<a class="headerlink" href="#tuple" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">word_freq</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;Wort A&quot;</span><span class="p">,</span> <span class="mi">42</span><span class="p">)</span>
+
+<span class="nb">type</span><span class="p">(</span><span class="n">word_freq</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tuple
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="indexieren-von-strings">
+<h2>Indexieren von Strings<a class="headerlink" href="#indexieren-von-strings" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Digital History Tagung&quot;</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Digital History Tagung&quot;</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Digital History Tagung&quot;</span><span class="p">[</span><span class="mi">8</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>i
+D
+H
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="slicing">
+<h2>Slicing<a class="headerlink" href="#slicing" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Digital History Tagung&quot;</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Digital History Tagung&quot;</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">6</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Digital Hi
+ita
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="indexieren-von-listen">
+<h2>Indexieren von Listen<a class="headerlink" href="#indexieren-von-listen" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list_2</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Banane&quot;</span><span class="p">,</span> <span class="s2">&quot;Apfel&quot;</span><span class="p">,</span> <span class="s2">&quot;Birne&quot;</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">list_2</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">list_2</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Birne
+Banane
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="funktionen-und-methoden-bei-listen">
+<h2>Funktionen und Methoden bei Listen<a class="headerlink" href="#funktionen-und-methoden-bei-listen" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">list_2</span><span class="p">))</span>
+
+<span class="n">list_2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Ananas&quot;</span><span class="p">)</span>
+
+<span class="n">list_2</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Apfel&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="zugriff-auf-dictionaries">
+<h2>Zugriff auf Dictionaries<a class="headerlink" href="#zugriff-auf-dictionaries" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dict_1</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Banane&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;Apfel&quot;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span> <span class="s2">&quot;Birne&quot;</span><span class="p">:</span> <span class="mi">9</span><span class="p">}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">dict_1</span><span class="p">[</span><span class="s2">&quot;Banane&quot;</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">dict_1</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">dict_1</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">dict_1</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;Banane&#39;, &#39;Apfel&#39;, &#39;Birne&#39;])
+dict_values([5, 7, 9])
+21
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="logische-ausdrucke">
+<h2>Logische Ausdrücke<a class="headerlink" href="#logische-ausdrucke" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">5</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="mi">5</span> <span class="o">&gt;</span> <span class="mi">7</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mauer&quot;</span> <span class="o">==</span> <span class="s2">&quot;Haus&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mauer&quot;</span> <span class="o">!=</span> <span class="s2">&quot;Haus&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+False
+False
+True
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="logische-ausdrucke-and-or">
+<h2>Logische Ausdrücke: and, or<a class="headerlink" href="#logische-ausdrucke-and-or" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">5</span> <span class="o">&gt;</span> <span class="mi">3</span> <span class="ow">and</span> <span class="s2">&quot;Mauer&quot;</span> <span class="o">!=</span> <span class="s2">&quot;Haus&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="mi">5</span> <span class="o">&gt;</span> <span class="mi">3</span> <span class="ow">and</span> <span class="s2">&quot;Mauer&quot;</span> <span class="o">==</span> <span class="s2">&quot;Haus&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="mi">5</span> <span class="o">&gt;</span> <span class="mi">3</span> <span class="ow">or</span> <span class="s2">&quot;Mauer&quot;</span> <span class="o">==</span> <span class="s2">&quot;Haus&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="mi">5</span> <span class="o">&gt;</span> <span class="mi">7</span> <span class="ow">or</span> <span class="s2">&quot;Mauer&quot;</span> <span class="o">==</span> <span class="s2">&quot;Haus&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+False
+True
+False
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="user-input-skript">
+<h2>User-Input Skript<a class="headerlink" href="#user-input-skript" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Eingabe Name</span>
+<span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Wie heißt du? &gt;&gt;&gt;&quot;</span><span class="p">)</span>
+
+<span class="c1"># Eingabe Alter</span>
+<span class="n">alter</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Wie alt bist du? &gt;&gt;&gt;&quot;</span><span class="p">)</span>
+
+<span class="c1"># Eingabe Wohnort</span>
+<span class="n">ort</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Wo wohnst du? &gt;&gt;&gt;&quot;</span><span class="p">)</span>
+
+<span class="n">jahr</span> <span class="o">=</span> <span class="mi">2021</span> <span class="o">-</span> <span class="nb">int</span><span class="p">(</span><span class="n">alter</span><span class="p">)</span>
+
+<span class="c1"># Ausgabe</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="se">\n</span><span class="s2">Hallo </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">, schön, dass du da bist!</span><span class="se">\n</span><span class="s2"></span>
+<span class="s2">Du bist </span><span class="si">{</span><span class="n">jahr</span><span class="si">}</span><span class="s2"> geboren.</span><span class="se">\n</span><span class="s2"></span>
+<span class="si">{</span><span class="n">ort</span><span class="si">}</span><span class="s2"> ist der beste Ort auf dem Planeten.&quot;&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_9636</span><span class="o">/</span><span class="mf">4096632491.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Eingabe Name</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Wie heißt du? &gt;&gt;&gt;&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> 
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Eingabe Alter</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">alter</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Wie alt bist du? &gt;&gt;&gt;&quot;</span><span class="p">)</span>
+
+<span class="nn">C:\JupyterLab\resources\jlab_server\lib\site-packages\ipykernel\kernelbase.py</span> in <span class="ni">raw_input</span><span class="nt">(self, prompt)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1001</span>         <span class="s2">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1002</span><span class="s2">         if not self._allow_stdin:</span>
+<span class="ne">-&gt; </span><span class="mi">1003</span><span class="s2">             raise StdinNotImplementedError(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1004</span><span class="s2">                 &quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1005</span><span class="s2">             )</span>
+
+<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "base2exp"
+        },
+        kernelOptions: {
+            kernelName: "base2exp",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'base2exp'</script>
+
+              </div>
+              
+            </div>
+        </div>
+    </div>
+    <div id="main-content" class="row noprint">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="datentypen">
+<h1>Datentypen<a class="headerlink" href="#datentypen" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="zeichenketten-strings">
+<h2>Zeichenketten / Strings<a class="headerlink" href="#zeichenketten-strings" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hallo Welt!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hallo Welt!
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="konkatenieren">
+<h2>Konkatenieren<a class="headerlink" href="#konkatenieren" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hallo &quot;</span> <span class="o">+</span> <span class="s2">&quot;Welt!&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Digital History Tagung &quot;</span> <span class="o">+</span> <span class="s2">&quot;2021&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="s2">&quot;bar &quot;</span> <span class="o">*</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hallo Welt!
+Digital History Tagung 2021
+foofoobar bar bar 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="variablen">
+<h2>Variablen<a class="headerlink" href="#variablen" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">event</span> <span class="o">=</span> <span class="s2">&quot;Digital History Tagung&quot;</span>
+<span class="n">year</span> <span class="o">=</span> <span class="mi">2021</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="f-strings">
+<h2>f-Strings<a class="headerlink" href="#f-strings" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Die </span><span class="si">{</span><span class="n">event</span><span class="si">}</span><span class="s2"> findet </span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s2"> statt.&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Die </span><span class="si">{}</span><span class="s2"> findet </span><span class="si">{}</span><span class="s2"> statt.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">year</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Die Digital History Tagung findet 2021 statt.
+Die Digital History Tagung findet 2021 statt.
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="funktionen-und-methoden-bei-strings">
+<h2>Funktionen und Methoden bei Strings<a class="headerlink" href="#funktionen-und-methoden-bei-strings" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">event</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="s2">&quot;Digital History Tagung&quot;</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Digital History Tagung&quot;</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22
+22
+digital history tagung
+DIGITAL HISTORY TAGUNG
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="listen-lists">
+<h2>Listen / Lists<a class="headerlink" href="#listen-lists" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list_1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+
+<span class="n">list_2</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Banane&quot;</span><span class="p">,</span> <span class="s2">&quot;Apfel&quot;</span><span class="p">,</span> <span class="s2">&quot;Birne&quot;</span><span class="p">]</span>
+
+<span class="n">list_3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">17</span><span class="p">,</span> <span class="s2">&quot;Obst&quot;</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="s2">&quot;Ball&quot;</span><span class="p">]</span>
+
+<span class="n">list_4</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,],</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Hallo&quot;</span><span class="p">,</span> <span class="s2">&quot;Welt&quot;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="zuordnungen-dictionaries">
+<h2>Zuordnungen / Dictionaries<a class="headerlink" href="#zuordnungen-dictionaries" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dict_1</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Banane&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> 
+          <span class="s2">&quot;Apfel&quot;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span> 
+          <span class="s2">&quot;Birne&quot;</span><span class="p">:</span> <span class="mi">9</span><span class="p">}</span>
+
+<span class="n">dict_2</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Vorname&quot;</span><span class="p">:</span> <span class="s2">&quot;Monty&quot;</span><span class="p">,</span> 
+          <span class="s2">&quot;Nachname&quot;</span><span class="p">:</span> <span class="s2">&quot;Python&quot;</span><span class="p">,</span> 
+          <span class="s2">&quot;Alter&quot;</span><span class="p">:</span> <span class="mi">48</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="mengen-sets">
+<h2>Mengen / Sets<a class="headerlink" href="#mengen-sets" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">menge</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">menge</span><span class="p">)</span>
+
+<span class="nb">type</span><span class="p">(</span><span class="n">menge</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1, 2, 3, 4, 5}
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>set
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="tuple">
+<h2>Tuple<a class="headerlink" href="#tuple" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">word_freq</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;Wort A&quot;</span><span class="p">,</span> <span class="mi">42</span><span class="p">)</span>
+
+<span class="nb">type</span><span class="p">(</span><span class="n">word_freq</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tuple
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="indexieren-von-strings">
+<h2>Indexieren von Strings<a class="headerlink" href="#indexieren-von-strings" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Digital History Tagung&quot;</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Digital History Tagung&quot;</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Digital History Tagung&quot;</span><span class="p">[</span><span class="mi">8</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>i
+D
+H
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="slicing">
+<h2>Slicing<a class="headerlink" href="#slicing" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Digital History Tagung&quot;</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Digital History Tagung&quot;</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">6</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Digital Hi
+ita
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="indexieren-von-listen">
+<h2>Indexieren von Listen<a class="headerlink" href="#indexieren-von-listen" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list_2</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Banane&quot;</span><span class="p">,</span> <span class="s2">&quot;Apfel&quot;</span><span class="p">,</span> <span class="s2">&quot;Birne&quot;</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">list_2</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">list_2</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Birne
+Banane
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="funktionen-und-methoden-bei-listen">
+<h2>Funktionen und Methoden bei Listen<a class="headerlink" href="#funktionen-und-methoden-bei-listen" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">list_2</span><span class="p">))</span>
+
+<span class="n">list_2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Ananas&quot;</span><span class="p">)</span>
+
+<span class="n">list_2</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Apfel&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="zugriff-auf-dictionaries">
+<h2>Zugriff auf Dictionaries<a class="headerlink" href="#zugriff-auf-dictionaries" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dict_1</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Banane&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;Apfel&quot;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span> <span class="s2">&quot;Birne&quot;</span><span class="p">:</span> <span class="mi">9</span><span class="p">}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">dict_1</span><span class="p">[</span><span class="s2">&quot;Banane&quot;</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">dict_1</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">dict_1</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">dict_1</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;Banane&#39;, &#39;Apfel&#39;, &#39;Birne&#39;])
+dict_values([5, 7, 9])
+21
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="logische-ausdrucke">
+<h2>Logische Ausdrücke<a class="headerlink" href="#logische-ausdrucke" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">5</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="mi">5</span> <span class="o">&gt;</span> <span class="mi">7</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mauer&quot;</span> <span class="o">==</span> <span class="s2">&quot;Haus&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mauer&quot;</span> <span class="o">!=</span> <span class="s2">&quot;Haus&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+False
+False
+True
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="logische-ausdrucke-and-or">
+<h2>Logische Ausdrücke: and, or<a class="headerlink" href="#logische-ausdrucke-and-or" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">5</span> <span class="o">&gt;</span> <span class="mi">3</span> <span class="ow">and</span> <span class="s2">&quot;Mauer&quot;</span> <span class="o">!=</span> <span class="s2">&quot;Haus&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="mi">5</span> <span class="o">&gt;</span> <span class="mi">3</span> <span class="ow">and</span> <span class="s2">&quot;Mauer&quot;</span> <span class="o">==</span> <span class="s2">&quot;Haus&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="mi">5</span> <span class="o">&gt;</span> <span class="mi">3</span> <span class="ow">or</span> <span class="s2">&quot;Mauer&quot;</span> <span class="o">==</span> <span class="s2">&quot;Haus&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="mi">5</span> <span class="o">&gt;</span> <span class="mi">7</span> <span class="ow">or</span> <span class="s2">&quot;Mauer&quot;</span> <span class="o">==</span> <span class="s2">&quot;Haus&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+False
+True
+False
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="user-input-skript">
+<h2>User-Input Skript<a class="headerlink" href="#user-input-skript" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Eingabe Name</span>
+<span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Wie heißt du? &gt;&gt;&gt;&quot;</span><span class="p">)</span>
+
+<span class="c1"># Eingabe Alter</span>
+<span class="n">alter</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Wie alt bist du? &gt;&gt;&gt;&quot;</span><span class="p">)</span>
+
+<span class="c1"># Eingabe Wohnort</span>
+<span class="n">ort</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Wo wohnst du? &gt;&gt;&gt;&quot;</span><span class="p">)</span>
+
+<span class="n">jahr</span> <span class="o">=</span> <span class="mi">2021</span> <span class="o">-</span> <span class="nb">int</span><span class="p">(</span><span class="n">alter</span><span class="p">)</span>
+
+<span class="c1"># Ausgabe</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="se">\n</span><span class="s2">Hallo </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">, schön, dass du da bist!</span><span class="se">\n</span><span class="s2"></span>
+<span class="s2">Du bist </span><span class="si">{</span><span class="n">jahr</span><span class="si">}</span><span class="s2"> geboren.</span><span class="se">\n</span><span class="s2"></span>
+<span class="si">{</span><span class="n">ort</span><span class="si">}</span><span class="s2"> ist der beste Ort auf dem Planeten.&quot;&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_9636</span><span class="o">/</span><span class="mf">4096632491.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Eingabe Name</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Wie heißt du? &gt;&gt;&gt;&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> 
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Eingabe Alter</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">alter</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Wie alt bist du? &gt;&gt;&gt;&quot;</span><span class="p">)</span>
+
+<span class="nn">C:\JupyterLab\resources\jlab_server\lib\site-packages\ipykernel\kernelbase.py</span> in <span class="ni">raw_input</span><span class="nt">(self, prompt)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1001</span>         <span class="s2">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1002</span><span class="s2">         if not self._allow_stdin:</span>
+<span class="ne">-&gt; </span><span class="mi">1003</span><span class="s2">             raise StdinNotImplementedError(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1004</span><span class="s2">                 &quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1005</span><span class="s2">             )</span>
+
+<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "base2exp"
+        },
+        kernelOptions: {
+            kernelName: "base2exp",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'base2exp'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../markdowns/block_2_erste_schritte.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Erste Schritte</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="02-Error-Handling.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">error handling und Kontrollstrukturen</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Martin Dröge<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

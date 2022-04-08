@@ -1,0 +1,756 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Erste Schritte &#8212; Python Basics Jupyter Book Showcase</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Datentypen" href="../notebooks/01-Datentypen.html" />
+    <link rel="prev" title="Historie, Konzepte, Einsatz" href="block_1_historie.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/Logo_DigitalHistoryBerlin.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Python Basics Jupyter Book Showcase</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Einführung
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Allgemeines
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="block_0_einstieg.html">
+   Einstieg
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="block_1_historie.html">
+   Historie, Konzepte, Einsatz
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Erste Schritte
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Grundlagen
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/01-Datentypen.html">
+   Datentypen
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/02-Error-Handling.html">
+   Error Handling und Kontrollstrukturen
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/03-Pseudocode.html">
+   Pseudocode
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/04-Funktionen-Textprocessing.html">
+   Funktionen
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Erste Anwendungen
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/05-NLTK-Visualisieren.html">
+   Worthäufigkeiten visualisieren
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/06-Web-Scraping.html">
+   Web Scraping
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Ressourcen
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/07-Hilfe-zur-Selbsthilfe.html">
+   Hilfe zur Selbsthilfe
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/markdowns/block_2_erste_schritte.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/martindroege/jb-python-basics-online"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jupyter-notebook-unter-anaconda">
+   Jupyter Notebook unter Anaconda
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lokales-arbeitsverzeichnis-erstellen">
+   lokales Arbeitsverzeichnis erstellen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jupyter-notebook-starten">
+   Jupyter Notebook starten
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#neues-jupyter-notebook">
+   Neues Jupyter Notebook
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#notebook-unter-google-colaboratory">
+   Notebook unter Google Colaboratory
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#google-colab-starten">
+   Google Colab starten
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jupyter-notebook-im-browser">
+   Jupyter Notebook im Browser
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hallo-welt">
+   Hallo Welt!
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jupyter-notebook-short-cuts">
+   Jupyter Notebook Short Cuts
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#addieren">
+   Addieren
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#substrahieren">
+   Substrahieren
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multiplizieren">
+   Multiplizieren
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dividieren">
+   Dividieren
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ganzzahl-und-gleitkommazahl">
+   Ganzzahl und Gleitkommazahl
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <!-- Table of contents that is only displayed when printing the page -->
+    <div id="jb-print-docs-body" class="onlyprint">
+        <h1>Erste Schritte</h1>
+        <!-- Table of contents -->
+        <div id="print-main-content" class="row">
+            <div class="col-12 col-md-12 pl-md-5 pr-md-5">
+            <div id="jb-print-toc">
+                
+                <div>
+                    <h2> Contents </h2>
+                </div>
+                <nav aria-label="Page">
+                    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jupyter-notebook-unter-anaconda">
+   Jupyter Notebook unter Anaconda
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lokales-arbeitsverzeichnis-erstellen">
+   lokales Arbeitsverzeichnis erstellen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jupyter-notebook-starten">
+   Jupyter Notebook starten
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#neues-jupyter-notebook">
+   Neues Jupyter Notebook
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#notebook-unter-google-colaboratory">
+   Notebook unter Google Colaboratory
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#google-colab-starten">
+   Google Colab starten
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jupyter-notebook-im-browser">
+   Jupyter Notebook im Browser
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hallo-welt">
+   Hallo Welt!
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jupyter-notebook-short-cuts">
+   Jupyter Notebook Short Cuts
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#addieren">
+   Addieren
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#substrahieren">
+   Substrahieren
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multiplizieren">
+   Multiplizieren
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dividieren">
+   Dividieren
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ganzzahl-und-gleitkommazahl">
+   Ganzzahl und Gleitkommazahl
+  </a>
+ </li>
+</ul>
+
+                </nav>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="erste-schritte">
+<h1>Erste Schritte<a class="headerlink" href="#erste-schritte" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="jupyter-notebook-unter-anaconda">
+<h2>Jupyter Notebook unter Anaconda<a class="headerlink" href="#jupyter-notebook-unter-anaconda" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Anaconda sollte vorab installiert sein!</p></li>
+<li><p><a class="reference external" href="https://www.anaconda.com">https://www.anaconda.com</a></p></li>
+</ul>
+</div>
+<div class="section" id="lokales-arbeitsverzeichnis-erstellen">
+<h2>lokales Arbeitsverzeichnis erstellen<a class="headerlink" href="#lokales-arbeitsverzeichnis-erstellen" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Neuen Ordner anlegen</p></li>
+<li><p>Umbenennen in <code class="docutils literal notranslate"><span class="pre">python-workshop</span></code></p></li>
+<li><p>Speicherort merken</p></li>
+</ul>
+</div>
+<div class="section" id="jupyter-notebook-starten">
+<h2>Jupyter Notebook starten<a class="headerlink" href="#jupyter-notebook-starten" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Windows-Startmenu aufrufen</p></li>
+<li><p>unter ‘A’: Anaconda auswählen</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Notebook</span></code> anklicken</p></li>
+<li><p>Zum Ordner <code class="docutils literal notranslate"><span class="pre">python-workshop</span></code> navigieren</p></li>
+</ul>
+</div>
+<div class="section" id="neues-jupyter-notebook">
+<h2>Neues Jupyter Notebook<a class="headerlink" href="#neues-jupyter-notebook" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Rechts oben auf ‘New’ klicken und Python3 auswählen</p></li>
+<li><p>Links ‘File’ auswählen und ‘Rename’ anklicken</p></li>
+<li><p>Notebook umbenennen in <code class="docutils literal notranslate"><span class="pre">python-workshop-notebook</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="notebook-unter-google-colaboratory">
+<h2>Notebook unter Google Colaboratory<a class="headerlink" href="#notebook-unter-google-colaboratory" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>mit Google Account angemeldet sein</p></li>
+<li><p>Vorteil:</p>
+<ul>
+<li><p>kein Setup und keine Installationen notwendig</p></li>
+<li><p>Notebooks können über einen Link geteilt werden</p></li>
+<li><p>Blick aus der Ferne in das Notebook wird möglich</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="google-colab-starten">
+<h2>Google Colab starten<a class="headerlink" href="#google-colab-starten" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://colab.research.google.com">https://colab.research.google.com</a>
+aufrufen</p></li>
+<li><p>unten rechts <code class="docutils literal notranslate"><span class="pre">NEUES</span> <span class="pre">NOTEBOOK</span></code> auswählen</p></li>
+<li><p>Notebook umbenennen in <code class="docutils literal notranslate"><span class="pre">*NAME*_python-workshop-notebook</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="jupyter-notebook-im-browser">
+<h2>Jupyter Notebook im Browser<a class="headerlink" href="#jupyter-notebook-im-browser" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyter.org/try">https://jupyter.org/try</a> aufrufen</p></li>
+<li><p>‘Try Classic Notebook’ anklicken</p></li>
+<li><p>Links ‘File’, dann ‘New Notebook’ und ‘Python3’ anwählen</p></li>
+<li><p>Links ‘File’ auswählen und ‘Rename’ anklicken</p></li>
+<li><p>Notebook umbenennen in <code class="docutils literal notranslate"><span class="pre">python-workshop-notebook</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="hallo-welt">
+<h2>Hallo Welt!<a class="headerlink" href="#hallo-welt" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hallo Welt!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="jupyter-notebook-short-cuts">
+<h2>Jupyter Notebook Short Cuts<a class="headerlink" href="#jupyter-notebook-short-cuts" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>STRG + Enter = Zelle ausführen</p></li>
+<li><p>SHIFT + Enter = Zelle ausführen und neue Zelle einfügen</p></li>
+<li><p>ESC = Wechsel in den Command Mode</p></li>
+<li><p>Enter = Wechsel in den Edit Mode</p></li>
+<li><p>B = neue Zelle unten einfügen</p></li>
+<li><p>M = Zelle in Markdown umwandeln</p></li>
+</ul>
+</div>
+<div class="section" id="addieren">
+<h2>Addieren<a class="headerlink" href="#addieren" title="Permalink to this headline">¶</a></h2>
+<p>5 + 2</p>
+<p>3 + 6</p>
+<p>42 + 1337</p>
+</div>
+<div class="section" id="substrahieren">
+<h2>Substrahieren<a class="headerlink" href="#substrahieren" title="Permalink to this headline">¶</a></h2>
+<p>5 - 2</p>
+<p>7 - 4</p>
+<p>1337 - 42</p>
+</div>
+<div class="section" id="multiplizieren">
+<h2>Multiplizieren<a class="headerlink" href="#multiplizieren" title="Permalink to this headline">¶</a></h2>
+<p>7 * 5</p>
+<p>6 * 3</p>
+<p>6 * 7</p>
+</div>
+<div class="section" id="dividieren">
+<h2>Dividieren<a class="headerlink" href="#dividieren" title="Permalink to this headline">¶</a></h2>
+<p>15 / 3</p>
+<p>42 / 7</p>
+<p>1337 / 12</p>
+</div>
+<div class="section" id="ganzzahl-und-gleitkommazahl">
+<h2>Ganzzahl und Gleitkommazahl<a class="headerlink" href="#ganzzahl-und-gleitkommazahl" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Ganzzahl</strong></p></li>
+</ul>
+<p>Integer, int(): 8, 42, 1337</p>
+<ul class="simple">
+<li><p><strong>Gleitkommazahl</strong></p></li>
+</ul>
+<p>Float, float(): 1.5, 8.7, 123.45</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./markdowns"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </div>
+        </div>
+    </div>
+    <div id="main-content" class="row noprint">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="erste-schritte">
+<h1>Erste Schritte<a class="headerlink" href="#erste-schritte" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="jupyter-notebook-unter-anaconda">
+<h2>Jupyter Notebook unter Anaconda<a class="headerlink" href="#jupyter-notebook-unter-anaconda" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Anaconda sollte vorab installiert sein!</p></li>
+<li><p><a class="reference external" href="https://www.anaconda.com">https://www.anaconda.com</a></p></li>
+</ul>
+</div>
+<div class="section" id="lokales-arbeitsverzeichnis-erstellen">
+<h2>lokales Arbeitsverzeichnis erstellen<a class="headerlink" href="#lokales-arbeitsverzeichnis-erstellen" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Neuen Ordner anlegen</p></li>
+<li><p>Umbenennen in <code class="docutils literal notranslate"><span class="pre">python-workshop</span></code></p></li>
+<li><p>Speicherort merken</p></li>
+</ul>
+</div>
+<div class="section" id="jupyter-notebook-starten">
+<h2>Jupyter Notebook starten<a class="headerlink" href="#jupyter-notebook-starten" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Windows-Startmenu aufrufen</p></li>
+<li><p>unter ‘A’: Anaconda auswählen</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Notebook</span></code> anklicken</p></li>
+<li><p>Zum Ordner <code class="docutils literal notranslate"><span class="pre">python-workshop</span></code> navigieren</p></li>
+</ul>
+</div>
+<div class="section" id="neues-jupyter-notebook">
+<h2>Neues Jupyter Notebook<a class="headerlink" href="#neues-jupyter-notebook" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Rechts oben auf ‘New’ klicken und Python3 auswählen</p></li>
+<li><p>Links ‘File’ auswählen und ‘Rename’ anklicken</p></li>
+<li><p>Notebook umbenennen in <code class="docutils literal notranslate"><span class="pre">python-workshop-notebook</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="notebook-unter-google-colaboratory">
+<h2>Notebook unter Google Colaboratory<a class="headerlink" href="#notebook-unter-google-colaboratory" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>mit Google Account angemeldet sein</p></li>
+<li><p>Vorteil:</p>
+<ul>
+<li><p>kein Setup und keine Installationen notwendig</p></li>
+<li><p>Notebooks können über einen Link geteilt werden</p></li>
+<li><p>Blick aus der Ferne in das Notebook wird möglich</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="google-colab-starten">
+<h2>Google Colab starten<a class="headerlink" href="#google-colab-starten" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://colab.research.google.com">https://colab.research.google.com</a>
+aufrufen</p></li>
+<li><p>unten rechts <code class="docutils literal notranslate"><span class="pre">NEUES</span> <span class="pre">NOTEBOOK</span></code> auswählen</p></li>
+<li><p>Notebook umbenennen in <code class="docutils literal notranslate"><span class="pre">*NAME*_python-workshop-notebook</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="jupyter-notebook-im-browser">
+<h2>Jupyter Notebook im Browser<a class="headerlink" href="#jupyter-notebook-im-browser" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyter.org/try">https://jupyter.org/try</a> aufrufen</p></li>
+<li><p>‘Try Classic Notebook’ anklicken</p></li>
+<li><p>Links ‘File’, dann ‘New Notebook’ und ‘Python3’ anwählen</p></li>
+<li><p>Links ‘File’ auswählen und ‘Rename’ anklicken</p></li>
+<li><p>Notebook umbenennen in <code class="docutils literal notranslate"><span class="pre">python-workshop-notebook</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="hallo-welt">
+<h2>Hallo Welt!<a class="headerlink" href="#hallo-welt" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hallo Welt!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="jupyter-notebook-short-cuts">
+<h2>Jupyter Notebook Short Cuts<a class="headerlink" href="#jupyter-notebook-short-cuts" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>STRG + Enter = Zelle ausführen</p></li>
+<li><p>SHIFT + Enter = Zelle ausführen und neue Zelle einfügen</p></li>
+<li><p>ESC = Wechsel in den Command Mode</p></li>
+<li><p>Enter = Wechsel in den Edit Mode</p></li>
+<li><p>B = neue Zelle unten einfügen</p></li>
+<li><p>M = Zelle in Markdown umwandeln</p></li>
+</ul>
+</div>
+<div class="section" id="addieren">
+<h2>Addieren<a class="headerlink" href="#addieren" title="Permalink to this headline">¶</a></h2>
+<p>5 + 2</p>
+<p>3 + 6</p>
+<p>42 + 1337</p>
+</div>
+<div class="section" id="substrahieren">
+<h2>Substrahieren<a class="headerlink" href="#substrahieren" title="Permalink to this headline">¶</a></h2>
+<p>5 - 2</p>
+<p>7 - 4</p>
+<p>1337 - 42</p>
+</div>
+<div class="section" id="multiplizieren">
+<h2>Multiplizieren<a class="headerlink" href="#multiplizieren" title="Permalink to this headline">¶</a></h2>
+<p>7 * 5</p>
+<p>6 * 3</p>
+<p>6 * 7</p>
+</div>
+<div class="section" id="dividieren">
+<h2>Dividieren<a class="headerlink" href="#dividieren" title="Permalink to this headline">¶</a></h2>
+<p>15 / 3</p>
+<p>42 / 7</p>
+<p>1337 / 12</p>
+</div>
+<div class="section" id="ganzzahl-und-gleitkommazahl">
+<h2>Ganzzahl und Gleitkommazahl<a class="headerlink" href="#ganzzahl-und-gleitkommazahl" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Ganzzahl</strong></p></li>
+</ul>
+<p>Integer, int(): 8, 42, 1337</p>
+<ul class="simple">
+<li><p><strong>Gleitkommazahl</strong></p></li>
+</ul>
+<p>Float, float(): 1.5, 8.7, 123.45</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./markdowns"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="block_1_historie.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Historie, Konzepte, Einsatz</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../notebooks/01-Datentypen.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Datentypen</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Martin Dröge<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

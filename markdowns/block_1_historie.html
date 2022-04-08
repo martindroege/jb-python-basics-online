@@ -1,0 +1,652 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Historie, Konzepte, Einsatz &#8212; Python Basics Jupyter Book Showcase</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Erste Schritte" href="block_2_erste_schritte.html" />
+    <link rel="prev" title="Einstieg" href="block_0_einstieg.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/Logo_DigitalHistoryBerlin.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Python Basics Jupyter Book Showcase</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Einführung
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Allgemeines
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="block_0_einstieg.html">
+   Einstieg
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Historie, Konzepte, Einsatz
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="block_2_erste_schritte.html">
+   Erste Schritte
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Grundlagen
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/01-Datentypen.html">
+   Datentypen
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/02-Error-Handling.html">
+   Error Handling und Kontrollstrukturen
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/03-Pseudocode.html">
+   Pseudocode
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/04-Funktionen-Textprocessing.html">
+   Funktionen
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Erste Anwendungen
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/05-NLTK-Visualisieren.html">
+   Worthäufigkeiten visualisieren
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/06-Web-Scraping.html">
+   Web Scraping
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Ressourcen
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/07-Hilfe-zur-Selbsthilfe.html">
+   Hilfe zur Selbsthilfe
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/markdowns/block_1_historie.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/martindroege/jb-python-basics-online"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#warum-python">
+   Warum Python?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#entwicklung">
+   Entwicklung
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jahre-python">
+   30 Jahre Python
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python-als-skriptsprache">
+   Python als Skriptsprache
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#einsatzgebiete-i">
+   Einsatzgebiete I
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#einsatzgebiete-ii">
+   Einsatzgebiete II
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#anwendungsbeispiele-fur-historikerinnen">
+   Anwendungsbeispiele für HistorikerInnen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#twitter-mining">
+   Twitter Mining
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#metadaten-abfrage">
+   Metadaten-Abfrage
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#topic-modeling">
+   Topic Modeling
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#netzwerkanalyse">
+   Netzwerkanalyse
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <!-- Table of contents that is only displayed when printing the page -->
+    <div id="jb-print-docs-body" class="onlyprint">
+        <h1>Historie, Konzepte, Einsatz</h1>
+        <!-- Table of contents -->
+        <div id="print-main-content" class="row">
+            <div class="col-12 col-md-12 pl-md-5 pr-md-5">
+            <div id="jb-print-toc">
+                
+                <div>
+                    <h2> Contents </h2>
+                </div>
+                <nav aria-label="Page">
+                    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#warum-python">
+   Warum Python?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#entwicklung">
+   Entwicklung
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jahre-python">
+   30 Jahre Python
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python-als-skriptsprache">
+   Python als Skriptsprache
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#einsatzgebiete-i">
+   Einsatzgebiete I
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#einsatzgebiete-ii">
+   Einsatzgebiete II
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#anwendungsbeispiele-fur-historikerinnen">
+   Anwendungsbeispiele für HistorikerInnen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#twitter-mining">
+   Twitter Mining
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#metadaten-abfrage">
+   Metadaten-Abfrage
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#topic-modeling">
+   Topic Modeling
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#netzwerkanalyse">
+   Netzwerkanalyse
+  </a>
+ </li>
+</ul>
+
+                </nav>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="historie-konzepte-einsatz">
+<h1>Historie, Konzepte, Einsatz<a class="headerlink" href="#historie-konzepte-einsatz" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="warum-python">
+<h2>Warum Python?<a class="headerlink" href="#warum-python" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>einfach zu lernen</p></li>
+<li><p>einfach zu lesen</p></li>
+<li><p>riesige Community</p></li>
+<li><p>viele Bibliotheken verfügbar</p></li>
+<li><p>laut TIOBE im Jahr 2020 auf <a class="reference external" href="https://www.tiobe.com/tiobe-index/">Platz 3</a></p></li>
+<li><p>Open Source Software</p></li>
+</ul>
+</div>
+<div class="section" id="entwicklung">
+<h2>Entwicklung<a class="headerlink" href="#entwicklung" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p>zu Beginn der 1990er-Jahre von Guido van Rossum entwickelt</p></li>
+<li><p>1994 erschien die Version 1.0</p></li>
+<li><p>ursprünglicher Zweck: Programmieren vermitteln</p></li>
+<li><p>Name geht nicht auf die Schlange, sondern auf Monty Python zurück</p></li>
+<li><p>Dezember 2008: Version 3.0 -&gt; vollständig auf Unicode umgestellt</p></li>
+<li><p>aktuelle Version Python 3.9.2</p>
+<!-- * Juli 2018: Guido van Rossum tritt als "Benevolent Dictator for Life" (BDFL) -->
+</li>
+</ul>
+</div>
+<div class="section" id="jahre-python">
+<h2>30 Jahre Python<a class="headerlink" href="#jahre-python" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>offizieller Startschuss fiel am 20. Februar 1991</p></li>
+<li><p><a class="reference external" href="https://www.heise.de/news/Python-Jubilaeum-30-Jahre-und-kein-bisschen-leise-5062143.html">Artikel zum Python-Jubiläum</a></p></li>
+</ul>
+</div>
+<div class="section" id="python-als-skriptsprache">
+<h2>Python als Skriptsprache<a class="headerlink" href="#python-als-skriptsprache" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>interpretiert</p></li>
+<li><p>höhere Programmiersprache</p></li>
+<li><p>Python-Skripte erkennbar an der Endung: <code class="docutils literal notranslate"><span class="pre">skript_name.py</span></code></p></li>
+<li><p>Jupyter Notebooks erkennbar an der Endung: <code class="docutils literal notranslate"><span class="pre">notebook_name.ipynb</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="einsatzgebiete-i">
+<h2>Einsatzgebiete I<a class="headerlink" href="#einsatzgebiete-i" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Universitäten und Forschungseinrichtungen</p></li>
+<li><p>Technologie-Branche</p></li>
+<li><p>Industrie</p></li>
+<li><p>Data Science</p></li>
+</ul>
+</div>
+<div class="section" id="einsatzgebiete-ii">
+<h2>Einsatzgebiete II<a class="headerlink" href="#einsatzgebiete-ii" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Data and Text Mining</p></li>
+<li><p>Daten-Analyse</p></li>
+<li><p>Visualisierung</p></li>
+<li><p>Web Entwicklung</p></li>
+<li><p>System-Administration</p></li>
+<li><p>Rapid Prototyping</p></li>
+</ul>
+</div>
+<div class="section" id="anwendungsbeispiele-fur-historikerinnen">
+<h2>Anwendungsbeispiele für HistorikerInnen<a class="headerlink" href="#anwendungsbeispiele-fur-historikerinnen" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="twitter-mining">
+<h2>Twitter Mining<a class="headerlink" href="#twitter-mining" title="Permalink to this headline">¶</a></h2>
+<p><img alt="#Wutbürger Co-Hahstags" src="../_images/co-hashtag-wutbuerger.PNG" /></p>
+</div>
+<div class="section" id="metadaten-abfrage">
+<h2>Metadaten-Abfrage<a class="headerlink" href="#metadaten-abfrage" title="Permalink to this headline">¶</a></h2>
+<p><img alt="Metadatensuche mit Polymatheia" src="../_images/metadaten-abfrage.PNG" /></p>
+</div>
+<div class="section" id="topic-modeling">
+<h2>Topic Modeling<a class="headerlink" href="#topic-modeling" title="Permalink to this headline">¶</a></h2>
+<p><img alt="Topic Modeling zur Preußischen Amtspresse" src="../_images/topic-model-amtspresse.PNG" /></p>
+</div>
+<div class="section" id="netzwerkanalyse">
+<span id="label-netzwerkanalyse"></span><h2>Netzwerkanalyse<a class="headerlink" href="#netzwerkanalyse" title="Permalink to this headline">¶</a></h2>
+<p><img alt="Netzwerkanalyse NBA-Bubble" src="../_images/nba-bubble-netzwerk.PNG" /></p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./markdowns"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </div>
+        </div>
+    </div>
+    <div id="main-content" class="row noprint">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="historie-konzepte-einsatz">
+<h1>Historie, Konzepte, Einsatz<a class="headerlink" href="#historie-konzepte-einsatz" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="warum-python">
+<h2>Warum Python?<a class="headerlink" href="#warum-python" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>einfach zu lernen</p></li>
+<li><p>einfach zu lesen</p></li>
+<li><p>riesige Community</p></li>
+<li><p>viele Bibliotheken verfügbar</p></li>
+<li><p>laut TIOBE im Jahr 2020 auf <a class="reference external" href="https://www.tiobe.com/tiobe-index/">Platz 3</a></p></li>
+<li><p>Open Source Software</p></li>
+</ul>
+</div>
+<div class="section" id="entwicklung">
+<h2>Entwicklung<a class="headerlink" href="#entwicklung" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p>zu Beginn der 1990er-Jahre von Guido van Rossum entwickelt</p></li>
+<li><p>1994 erschien die Version 1.0</p></li>
+<li><p>ursprünglicher Zweck: Programmieren vermitteln</p></li>
+<li><p>Name geht nicht auf die Schlange, sondern auf Monty Python zurück</p></li>
+<li><p>Dezember 2008: Version 3.0 -&gt; vollständig auf Unicode umgestellt</p></li>
+<li><p>aktuelle Version Python 3.9.2</p>
+<!-- * Juli 2018: Guido van Rossum tritt als "Benevolent Dictator for Life" (BDFL) -->
+</li>
+</ul>
+</div>
+<div class="section" id="jahre-python">
+<h2>30 Jahre Python<a class="headerlink" href="#jahre-python" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>offizieller Startschuss fiel am 20. Februar 1991</p></li>
+<li><p><a class="reference external" href="https://www.heise.de/news/Python-Jubilaeum-30-Jahre-und-kein-bisschen-leise-5062143.html">Artikel zum Python-Jubiläum</a></p></li>
+</ul>
+</div>
+<div class="section" id="python-als-skriptsprache">
+<h2>Python als Skriptsprache<a class="headerlink" href="#python-als-skriptsprache" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>interpretiert</p></li>
+<li><p>höhere Programmiersprache</p></li>
+<li><p>Python-Skripte erkennbar an der Endung: <code class="docutils literal notranslate"><span class="pre">skript_name.py</span></code></p></li>
+<li><p>Jupyter Notebooks erkennbar an der Endung: <code class="docutils literal notranslate"><span class="pre">notebook_name.ipynb</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="einsatzgebiete-i">
+<h2>Einsatzgebiete I<a class="headerlink" href="#einsatzgebiete-i" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Universitäten und Forschungseinrichtungen</p></li>
+<li><p>Technologie-Branche</p></li>
+<li><p>Industrie</p></li>
+<li><p>Data Science</p></li>
+</ul>
+</div>
+<div class="section" id="einsatzgebiete-ii">
+<h2>Einsatzgebiete II<a class="headerlink" href="#einsatzgebiete-ii" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Data and Text Mining</p></li>
+<li><p>Daten-Analyse</p></li>
+<li><p>Visualisierung</p></li>
+<li><p>Web Entwicklung</p></li>
+<li><p>System-Administration</p></li>
+<li><p>Rapid Prototyping</p></li>
+</ul>
+</div>
+<div class="section" id="anwendungsbeispiele-fur-historikerinnen">
+<h2>Anwendungsbeispiele für HistorikerInnen<a class="headerlink" href="#anwendungsbeispiele-fur-historikerinnen" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="twitter-mining">
+<h2>Twitter Mining<a class="headerlink" href="#twitter-mining" title="Permalink to this headline">¶</a></h2>
+<p><img alt="#Wutbürger Co-Hahstags" src="../_images/co-hashtag-wutbuerger.PNG" /></p>
+</div>
+<div class="section" id="metadaten-abfrage">
+<h2>Metadaten-Abfrage<a class="headerlink" href="#metadaten-abfrage" title="Permalink to this headline">¶</a></h2>
+<p><img alt="Metadatensuche mit Polymatheia" src="../_images/metadaten-abfrage.PNG" /></p>
+</div>
+<div class="section" id="topic-modeling">
+<h2>Topic Modeling<a class="headerlink" href="#topic-modeling" title="Permalink to this headline">¶</a></h2>
+<p><img alt="Topic Modeling zur Preußischen Amtspresse" src="../_images/topic-model-amtspresse.PNG" /></p>
+</div>
+<div class="section" id="netzwerkanalyse">
+<span id="label-netzwerkanalyse"></span><h2>Netzwerkanalyse<a class="headerlink" href="#netzwerkanalyse" title="Permalink to this headline">¶</a></h2>
+<p><img alt="Netzwerkanalyse NBA-Bubble" src="../_images/nba-bubble-netzwerk.PNG" /></p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./markdowns"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="block_0_einstieg.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Einstieg</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="block_2_erste_schritte.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Erste Schritte</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Martin Dröge<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

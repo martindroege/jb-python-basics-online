@@ -1,0 +1,3193 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Funktionen Textprocessing &#8212; Python Basics Jupyter Book Showcase</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="NLTK und Worthäufigkeiten visualisieren" href="05-NLTK-Visualisieren.html" />
+    <link rel="prev" title="Pseudo-Code" href="03-Pseudocode.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/Logo_DigitalHistoryBerlin.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Python Basics Jupyter Book Showcase</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Einführung
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Allgemeines
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../markdowns/block_0_einstieg.html">
+   Einstieg
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../markdowns/block_1_historie.html">
+   Historie, Konzepte, Einsatz
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../markdowns/block_2_erste_schritte.html">
+   Erste Schritte
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Grundlagen
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-Datentypen.html">
+   Datentypen
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-Error-Handling.html">
+   Error Handling und Kontrollstrukturen
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03-Pseudocode.html">
+   Pseudocode
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Funktionen
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Erste Anwendungen
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="05-NLTK-Visualisieren.html">
+   Worthäufigkeiten visualisieren
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06-Web-Scraping.html">
+   Web Scraping
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Ressourcen
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="07-Hilfe-zur-Selbsthilfe.html">
+   Hilfe zur Selbsthilfe
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notebooks/04-Funktionen-Textprocessing.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/martindroege/jb-python-basics-online"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/martindroege/jb-python-basics-online/main?urlpath=lab/tree/docs/notebooks/04-Funktionen-Textprocessing.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#text-datei-runterladen">
+   Text-Datei runterladen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#text-datei-speichern">
+   Text-Datei speichern
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kleinschreibung-vereinheitlichen">
+   Kleinschreibung vereinheitlichen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#zeichensetzung-entfernen">
+   Zeichensetzung entfernen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#liste-erstellen">
+   Liste erstellen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#zahlen-eines-bestimmten-worts">
+   Zählen eines bestimmten Worts
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#alle-worter-zahlen-mit-hilfe-eines-dictionarys">
+   Alle Wörter zählen mit Hilfe eines Dictionarys
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#worthaufigkeiten-sortieren">
+   Worthäufigkeiten sortieren
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#entfernen-von-stoppwortern">
+   Entfernen von Stoppwörtern
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#entfernen-von-zahlen-mit-regularem-ausdruck">
+   Entfernen von Zahlen mit regulärem Ausdruck
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#funktionsaufrufe">
+   Funktionsaufrufe
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <!-- Table of contents that is only displayed when printing the page -->
+    <div id="jb-print-docs-body" class="onlyprint">
+        <h1>Funktionen Textprocessing</h1>
+        <!-- Table of contents -->
+        <div id="print-main-content" class="row">
+            <div class="col-12 col-md-12 pl-md-5 pr-md-5">
+            <div id="jb-print-toc">
+                
+                <div>
+                    <h2> Contents </h2>
+                </div>
+                <nav aria-label="Page">
+                    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#text-datei-runterladen">
+   Text-Datei runterladen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#text-datei-speichern">
+   Text-Datei speichern
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kleinschreibung-vereinheitlichen">
+   Kleinschreibung vereinheitlichen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#zeichensetzung-entfernen">
+   Zeichensetzung entfernen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#liste-erstellen">
+   Liste erstellen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#zahlen-eines-bestimmten-worts">
+   Zählen eines bestimmten Worts
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#alle-worter-zahlen-mit-hilfe-eines-dictionarys">
+   Alle Wörter zählen mit Hilfe eines Dictionarys
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#worthaufigkeiten-sortieren">
+   Worthäufigkeiten sortieren
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#entfernen-von-stoppwortern">
+   Entfernen von Stoppwörtern
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#entfernen-von-zahlen-mit-regularem-ausdruck">
+   Entfernen von Zahlen mit regulärem Ausdruck
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#funktionsaufrufe">
+   Funktionsaufrufe
+  </a>
+ </li>
+</ul>
+
+                </nav>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="funktionen-textprocessing">
+<h1>Funktionen Textprocessing<a class="headerlink" href="#funktionen-textprocessing" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="text-datei-runterladen">
+<h2>Text-Datei runterladen<a class="headerlink" href="#text-datei-runterladen" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">gg_raw_url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/levinalex/deutsche_verfassungen/master/grundgesetz/grundgesetz.txt&quot;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">gg_raw_url</span><span class="p">)</span>
+<span class="n">grundgesetz</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span>
+
+<span class="n">grundgesetz</span><span class="p">[:</span><span class="mi">1000</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Grundgesetz für die Bundesrepublik Deutschland\n\nVom 23. Mai 1949 (BGBl. S. 1)\n\nZuletzt geändert durch das Gesetz zur Änderung des Grundgesetzes (Artikel 96) vom 26. 7. 2002 (BGBl. I S. 2863)\n\n\n\n\n\n\n\nDer Parlamentarische Rat hat am 23. Mai 1949 in Bonn am Rhein in öffentlicher Sitzung festgestellt, daß das am 8. Mai des Jahres 1949 vom Parlamentarischen Rat beschlossene Grundgesetz für die Bundesrepublik Deutschland in der Woche vom 16. bis 22. Mai 1949 durch die Volksvertretungen von mehr als zwei Dritteln der beteiligten deutschen Länder angenommen worden ist.\nAuf Grund dieser Feststellung hat der Parlamentarische Rat, vertreten durch seine Präsidenten, das Grundgesetz ausgefertigt und verkündet.\n\nDas Grundgesetz wird hiermit gemäß Artikel 145 Absatz 3 im Bundesgesetzblatt veröffentlicht.\n\n\nPräambel\n\nIm Bewußtsein seiner Verantwortung vor Gott und den Menschen, von dem Willen beseelt, als gleichberechtigtes Glied in einem vereinten Europa dem Frieden der Welt zu dienen, hat sich das De&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="text-datei-speichern">
+<h2>Text-Datei speichern<a class="headerlink" href="#text-datei-speichern" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;grundgesetz.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">grundgesetz</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="kleinschreibung-vereinheitlichen">
+<h2>Kleinschreibung vereinheitlichen<a class="headerlink" href="#kleinschreibung-vereinheitlichen" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grundgesetz</span> <span class="o">=</span> <span class="n">grundgesetz</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">grundgesetz</span><span class="p">[:</span><span class="mi">250</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>grundgesetz für die bundesrepublik deutschland
+
+vom 23. mai 1949 (bgbl. s. 1)
+
+zuletzt geändert durch das gesetz zur änderung des grundgesetzes (artikel 96) vom 26. 7. 2002 (bgbl. i s. 2863)
+
+
+
+
+
+
+
+der parlamentarische rat hat am 23. mai 1949 in bonn
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="zeichensetzung-entfernen">
+<h2>Zeichensetzung entfernen<a class="headerlink" href="#zeichensetzung-entfernen" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">string</span>
+
+<span class="k">def</span> <span class="nf">remove_punctuation</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="n">punctuation</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">punctuation</span>
+    <span class="k">for</span> <span class="n">marker</span> <span class="ow">in</span> <span class="n">punctuation</span><span class="p">:</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">marker</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">text</span>
+
+<span class="n">grundgesetz</span> <span class="o">=</span> <span class="n">remove_punctuation</span><span class="p">(</span><span class="n">grundgesetz</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">grundgesetz</span><span class="p">[:</span><span class="mi">250</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>grundgesetz für die bundesrepublik deutschland
+
+vom 23 mai 1949 bgbl s 1
+
+zuletzt geändert durch das gesetz zur änderung des grundgesetzes artikel 96 vom 26 7 2002 bgbl i s 2863
+
+
+
+
+
+
+
+der parlamentarische rat hat am 23 mai 1949 in bonn am rhein in ö
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="liste-erstellen">
+<h2>Liste erstellen<a class="headerlink" href="#liste-erstellen" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grundgesetz_words</span> <span class="o">=</span> <span class="n">grundgesetz</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Anzahl aller Worte des Textes: &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">grundgesetz_words</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=======&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">grundgesetz_words</span><span class="p">[:</span><span class="mi">25</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Anzahl aller Worte des Textes: 
+19127
+=======
+[&#39;grundgesetz&#39;, &#39;für&#39;, &#39;die&#39;, &#39;bundesrepublik&#39;, &#39;deutschland&#39;, &#39;vom&#39;, &#39;23&#39;, &#39;mai&#39;, &#39;1949&#39;, &#39;bgbl&#39;, &#39;s&#39;, &#39;1&#39;, &#39;zuletzt&#39;, &#39;geändert&#39;, &#39;durch&#39;, &#39;das&#39;, &#39;gesetz&#39;, &#39;zur&#39;, &#39;änderung&#39;, &#39;des&#39;, &#39;grundgesetzes&#39;, &#39;artikel&#39;, &#39;96&#39;, &#39;vom&#39;, &#39;26&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="zahlen-eines-bestimmten-worts">
+<h2>Zählen eines bestimmten Worts<a class="headerlink" href="#zahlen-eines-bestimmten-worts" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count_item_in_text</span><span class="p">(</span><span class="n">item_to_count</span><span class="p">,</span> <span class="n">list_to_search</span><span class="p">):</span>
+    <span class="n">number_of_hits</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">list_to_search</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">item</span> <span class="o">==</span> <span class="n">item_to_count</span><span class="p">:</span>
+            <span class="n">number_of_hits</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">number_of_hits</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">count_item_in_text</span><span class="p">(</span><span class="s2">&quot;bund&quot;</span><span class="p">,</span> <span class="n">grundgesetz_words</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>85
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="alle-worter-zahlen-mit-hilfe-eines-dictionarys">
+<h2>Alle Wörter zählen mit Hilfe eines Dictionarys<a class="headerlink" href="#alle-worter-zahlen-mit-hilfe-eines-dictionarys" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">counter_dict</span><span class="p">(</span><span class="n">list_to_search</span><span class="p">):</span>
+    <span class="n">counts</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">list_to_search</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">counts</span><span class="p">:</span>
+            <span class="n">counts</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">=</span> <span class="n">counts</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>  
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">counts</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">counts</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">counter_dict</span><span class="p">(</span><span class="n">grundgesetz_words</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;grundgesetz&#39;: 27,
+ &#39;für&#39;: 162,
+ &#39;die&#39;: 859,
+ &#39;bundesrepublik&#39;: 10,
+ &#39;deutschland&#39;: 9,
+ &#39;vom&#39;: 43,
+ &#39;23&#39;: 9,
+ &#39;mai&#39;: 10,
+ &#39;1949&#39;: 5,
+ &#39;bgbl&#39;: 2,
+ &#39;s&#39;: 2,
+ &#39;1&#39;: 219,
+ &#39;zuletzt&#39;: 1,
+ &#39;geändert&#39;: 13,
+ &#39;durch&#39;: 176,
+ &#39;das&#39;: 303,
+ &#39;gesetz&#39;: 65,
+ &#39;zur&#39;: 99,
+ &#39;änderung&#39;: 9,
+ &#39;des&#39;: 495,
+ &#39;grundgesetzes&#39;: 30,
+ &#39;artikel&#39;: 263,
+ &#39;96&#39;: 2,
+ &#39;26&#39;: 4,
+ &#39;7&#39;: 14,
+ &#39;2002&#39;: 1,
+ &#39;i&#39;: 3,
+ &#39;2863&#39;: 1,
+ &#39;der&#39;: 932,
+ &#39;parlamentarische&#39;: 5,
+ &#39;rat&#39;: 5,
+ &#39;hat&#39;: 71,
+ &#39;am&#39;: 15,
+ &#39;in&#39;: 241,
+ &#39;bonn&#39;: 1,
+ &#39;rhein&#39;: 1,
+ &#39;öffentlicher&#39;: 4,
+ &#39;sitzung&#39;: 3,
+ &#39;festgestellt&#39;: 6,
+ &#39;daß&#39;: 59,
+ &#39;8&#39;: 14,
+ &#39;jahres&#39;: 2,
+ &#39;parlamentarischen&#39;: 3,
+ &#39;beschlossene&#39;: 2,
+ &#39;woche&#39;: 1,
+ &#39;16&#39;: 5,
+ &#39;bis&#39;: 35,
+ &#39;22&#39;: 3,
+ &#39;volksvertretungen&#39;: 4,
+ &#39;von&#39;: 189,
+ &#39;mehr&#39;: 25,
+ &#39;als&#39;: 67,
+ &#39;zwei&#39;: 24,
+ &#39;dritteln&#39;: 14,
+ &#39;beteiligten&#39;: 10,
+ &#39;deutschen&#39;: 27,
+ &#39;länder&#39;: 112,
+ &#39;angenommen&#39;: 1,
+ &#39;worden&#39;: 15,
+ &#39;ist&#39;: 160,
+ &#39;auf&#39;: 154,
+ &#39;grund&#39;: 38,
+ &#39;dieser&#39;: 22,
+ &#39;feststellung&#39;: 11,
+ &#39;vertreten&#39;: 4,
+ &#39;seine&#39;: 12,
+ &#39;präsidenten&#39;: 8,
+ &#39;ausgefertigt&#39;: 3,
+ &#39;und&#39;: 577,
+ &#39;verkündet&#39;: 7,
+ &#39;wird&#39;: 81,
+ &#39;hiermit&#39;: 1,
+ &#39;gemäß&#39;: 18,
+ &#39;145&#39;: 2,
+ &#39;absatz&#39;: 98,
+ &#39;3&#39;: 131,
+ &#39;im&#39;: 132,
+ &#39;bundesgesetzblatt&#39;: 2,
+ &#39;veröffentlicht&#39;: 1,
+ &#39;präambel&#39;: 1,
+ &#39;bewußtsein&#39;: 1,
+ &#39;seiner&#39;: 53,
+ &#39;verantwortung&#39;: 11,
+ &#39;vor&#39;: 24,
+ &#39;gott&#39;: 2,
+ &#39;den&#39;: 283,
+ &#39;menschen&#39;: 5,
+ &#39;dem&#39;: 139,
+ &#39;willen&#39;: 6,
+ &#39;beseelt&#39;: 1,
+ &#39;gleichberechtigtes&#39;: 1,
+ &#39;glied&#39;: 1,
+ &#39;einem&#39;: 50,
+ &#39;vereinten&#39;: 2,
+ &#39;europa&#39;: 2,
+ &#39;frieden&#39;: 1,
+ &#39;welt&#39;: 3,
+ &#39;zu&#39;: 192,
+ &#39;dienen&#39;: 7,
+ &#39;sich&#39;: 43,
+ &#39;deutsche&#39;: 13,
+ &#39;volk&#39;: 5,
+ &#39;kraft&#39;: 15,
+ &#39;verfassungsgebenden&#39;: 1,
+ &#39;gewalt&#39;: 11,
+ &#39;dieses&#39;: 46,
+ &#39;gegeben&#39;: 4,
+ &#39;ländern&#39;: 57,
+ &#39;badenwürttemberg&#39;: 1,
+ &#39;bayern&#39;: 2,
+ &#39;berlin&#39;: 2,
+ &#39;brandenburg&#39;: 2,
+ &#39;bremen&#39;: 1,
+ &#39;hamburg&#39;: 1,
+ &#39;hessen&#39;: 1,
+ &#39;mecklenburgvorpommern&#39;: 1,
+ &#39;niedersachsen&#39;: 1,
+ &#39;nordrheinwestfalen&#39;: 1,
+ &#39;rheinlandpfalz&#39;: 2,
+ &#39;saarland&#39;: 1,
+ &#39;sachsen&#39;: 1,
+ &#39;sachsenanhalt&#39;: 1,
+ &#39;schleswigholstein&#39;: 1,
+ &#39;thüringen&#39;: 1,
+ &#39;haben&#39;: 30,
+ &#39;freier&#39;: 3,
+ &#39;selbstbestimmung&#39;: 1,
+ &#39;einheit&#39;: 3,
+ &#39;freiheit&#39;: 13,
+ &#39;deutschlands&#39;: 2,
+ &#39;vollendet&#39;: 3,
+ &#39;damit&#39;: 1,
+ &#39;gilt&#39;: 30,
+ &#39;gesamte&#39;: 3,
+ &#39;grundrechte&#39;: 8,
+ &#39;würde&#39;: 2,
+ &#39;unantastbar&#39;: 1,
+ &#39;sie&#39;: 74,
+ &#39;achten&#39;: 1,
+ &#39;schützen&#39;: 2,
+ &#39;verpflichtung&#39;: 2,
+ &#39;aller&#39;: 3,
+ &#39;staatlichen&#39;: 9,
+ &#39;2&#39;: 201,
+ &#39;bekennt&#39;: 1,
+ &#39;darum&#39;: 1,
+ &#39;unverletzlichen&#39;: 1,
+ &#39;unveräußerlichen&#39;: 1,
+ &#39;menschenrechten&#39;: 1,
+ &#39;grundlage&#39;: 7,
+ &#39;jeder&#39;: 14,
+ &#39;menschlichen&#39;: 1,
+ &#39;gemeinschaft&#39;: 8,
+ &#39;friedens&#39;: 2,
+ &#39;gerechtigkeit&#39;: 2,
+ &#39;nachfolgenden&#39;: 2,
+ &#39;binden&#39;: 1,
+ &#39;gesetzgebung&#39;: 33,
+ &#39;vollziehende&#39;: 3,
+ &#39;rechtsprechung&#39;: 6,
+ &#39;unmittelbar&#39;: 8,
+ &#39;geltendes&#39;: 2,
+ &#39;recht&#39;: 54,
+ &#39;freie&#39;: 1,
+ &#39;entfaltung&#39;: 1,
+ &#39;persönlichkeit&#39;: 1,
+ &#39;soweit&#39;: 80,
+ &#39;er&#39;: 33,
+ &#39;nicht&#39;: 120,
+ &#39;rechte&#39;: 22,
+ &#39;anderer&#39;: 16,
+ &#39;verletzt&#39;: 5,
+ &#39;gegen&#39;: 26,
+ &#39;verfassungsmaßige&#39;: 1,
+ &#39;ordnung&#39;: 15,
+ &#39;oder&#39;: 269,
+ &#39;sittengesetz&#39;: 1,
+ &#39;verstößt&#39;: 2,
+ &#39;leben&#39;: 1,
+ &#39;körperliche&#39;: 1,
+ &#39;unversehrtheit&#39;: 1,
+ &#39;person&#39;: 4,
+ &#39;unverletzlich&#39;: 4,
+ &#39;diese&#39;: 32,
+ &#39;darf&#39;: 31,
+ &#39;nur&#39;: 60,
+ &#39;eines&#39;: 93,
+ &#39;gesetzes&#39;: 18,
+ &#39;eingegriffen&#39;: 1,
+ &#39;werden&#39;: 207,
+ &#39;alle&#39;: 18,
+ &#39;sind&#39;: 109,
+ &#39;gleich&#39;: 1,
+ &#39;männer&#39;: 1,
+ &#39;frauen&#39;: 3,
+ &#39;gleichberechtigt&#39;: 1,
+ &#39;staat&#39;: 4,
+ &#39;fördert&#39;: 1,
+ &#39;tatsächliche&#39;: 1,
+ &#39;durchsetzung&#39;: 1,
+ &#39;gleichberechtigung&#39;: 1,
+ &#39;männern&#39;: 1,
+ &#39;wirkt&#39;: 3,
+ &#39;beseitigung&#39;: 5,
+ &#39;bestehender&#39;: 5,
+ &#39;nachteile&#39;: 1,
+ &#39;hin&#39;: 1,
+ &#39;niemand&#39;: 7,
+ &#39;wegen&#39;: 11,
+ &#39;seines&#39;: 8,
+ &#39;geschlechtes&#39;: 1,
+ &#39;abstammung&#39;: 1,
+ &#39;rasse&#39;: 1,
+ &#39;sprache&#39;: 1,
+ &#39;heimat&#39;: 1,
+ &#39;herkunft&#39;: 2,
+ &#39;glaubens&#39;: 2,
+ &#39;religiösen&#39;: 4,
+ &#39;politischen&#39;: 5,
+ &#39;anschauungen&#39;: 1,
+ &#39;benachteiligt&#39;: 2,
+ &#39;bevorzugt&#39;: 1,
+ &#39;behinderung&#39;: 1,
+ &#39;4&#39;: 65,
+ &#39;gewissens&#39;: 1,
+ &#39;weltanschaulichen&#39;: 1,
+ &#39;bekenntnisses&#39;: 1,
+ &#39;ungestörte&#39;: 1,
+ &#39;religionsausübung&#39;: 1,
+ &#39;gewährleistet&#39;: 11,
+ &#39;sein&#39;: 7,
+ &#39;gewissen&#39;: 2,
+ &#39;zum&#39;: 54,
+ &#39;kriegsdienst&#39;: 2,
+ &#39;mit&#39;: 128,
+ &#39;waffe&#39;: 3,
+ &#39;gezwungen&#39;: 2,
+ &#39;nahere&#39;: 1,
+ &#39;regelt&#39;: 25,
+ &#39;ein&#39;: 95,
+ &#39;bundesgesetz&#39;: 78,
+ &#39;5&#39;: 39,
+ &#39;meinung&#39;: 2,
+ &#39;wort&#39;: 2,
+ &#39;schrift&#39;: 2,
+ &#39;bild&#39;: 2,
+ &#39;frei&#39;: 7,
+ &#39;äußern&#39;: 2,
+ &#39;verbreiten&#39;: 2,
+ &#39;aus&#39;: 59,
+ &#39;allgemein&#39;: 2,
+ &#39;zugänglichen&#39;: 1,
+ &#39;quellen&#39;: 2,
+ &#39;ungehindert&#39;: 1,
+ &#39;unterrichten&#39;: 5,
+ &#39;pressefreiheit&#39;: 2,
+ &#39;berichterstattung&#39;: 1,
+ &#39;rundfunk&#39;: 1,
+ &#39;film&#39;: 1,
+ &#39;eine&#39;: 87,
+ &#39;zensur&#39;: 1,
+ &#39;findet&#39;: 18,
+ &#39;statt&#39;: 5,
+ &#39;finden&#39;: 3,
+ &#39;ihre&#39;: 23,
+ &#39;schranken&#39;: 2,
+ &#39;vorschriften&#39;: 14,
+ &#39;allgemeinen&#39;: 13,
+ &#39;gesetze&#39;: 39,
+ &#39;gesetzlichen&#39;: 5,
+ &#39;bestimmungen&#39;: 12,
+ &#39;schutze&#39;: 10,
+ &#39;derjugend&#39;: 1,
+ &#39;persönlichen&#39;: 3,
+ &#39;ehre&#39;: 1,
+ &#39;kunst&#39;: 1,
+ &#39;wissenschaft&#39;: 1,
+ &#39;forschung&#39;: 3,
+ &#39;lehre&#39;: 2,
+ &#39;entbindet&#39;: 1,
+ &#39;treue&#39;: 1,
+ &#39;verfassung&#39;: 5,
+ &#39;6&#39;: 18,
+ &#39;ehe&#39;: 1,
+ &#39;familie&#39;: 2,
+ &#39;stehen&#39;: 12,
+ &#39;unter&#39;: 25,
+ &#39;besonderen&#39;: 3,
+ &#39;pflege&#39;: 2,
+ &#39;erziehung&#39;: 1,
+ &#39;kinder&#39;: 3,
+ &#39;natürliche&#39;: 1,
+ &#39;eltern&#39;: 2,
+ &#39;zuvörderst&#39;: 1,
+ &#39;ihnen&#39;: 7,
+ &#39;obliegende&#39;: 2,
+ &#39;pflicht&#39;: 5,
+ &#39;über&#39;: 80,
+ &#39;betätigung&#39;: 1,
+ &#39;wacht&#39;: 1,
+ &#39;staatliche&#39;: 1,
+ &#39;erziehungsberechtigten&#39;: 4,
+ &#39;dürfen&#39;: 21,
+ &#39;getrennt&#39;: 3,
+ &#39;wenn&#39;: 62,
+ &#39;versagen&#39;: 3,
+ &#39;anderen&#39;: 20,
+ &#39;gründen&#39;: 6,
+ &#39;verwahrlosen&#39;: 1,
+ &#39;drohen&#39;: 1,
+ &#39;jede&#39;: 5,
+ &#39;mutter&#39;: 1,
+ &#39;anspruch&#39;: 6,
+ &#39;schutz&#39;: 9,
+ &#39;fürsorge&#39;: 3,
+ &#39;unehelichen&#39;: 1,
+ &#39;kindern&#39;: 3,
+ &#39;gleichen&#39;: 10,
+ &#39;bedingungen&#39;: 2,
+ &#39;leibliche&#39;: 1,
+ &#39;seelische&#39;: 1,
+ &#39;entwicklung&#39;: 2,
+ &#39;stellung&#39;: 7,
+ &#39;gesellschaft&#39;: 1,
+ &#39;schaffen&#39;: 1,
+ &#39;wie&#39;: 3,
+ &#39;ehelichen&#39;: 1,
+ &#39;schulwesen&#39;: 1,
+ &#39;steht&#39;: 16,
+ &#39;aufsicht&#39;: 3,
+ &#39;staates&#39;: 2,
+ &#39;teilnahme&#39;: 2,
+ &#39;kindes&#39;: 1,
+ &#39;religionsunterricht&#39;: 4,
+ &#39;bestimmen&#39;: 24,
+ &#39;öffentlichen&#39;: 34,
+ &#39;schulen&#39;: 7,
+ &#39;ausnahme&#39;: 2,
+ &#39;bekenntnisfreien&#39;: 1,
+ &#39;ordentliches&#39;: 1,
+ &#39;lehrfach&#39;: 1,
+ &#39;unbeschadet&#39;: 2,
+ &#39;aufsichtsrechtes&#39;: 1,
+ &#39;übereinstimmung&#39;: 2,
+ &#39;grundsätzen&#39;: 7,
+ &#39;religionsgemeinschaften&#39;: 1,
+ &#39;erteilt&#39;: 4,
+ &#39;kein&#39;: 6,
+ &#39;lehrer&#39;: 1,
+ &#39;seinen&#39;: 7,
+ &#39;verpflichtet&#39;: 13,
+ &#39;erteilen&#39;: 7,
+ &#39;errichtung&#39;: 3,
+ &#39;privaten&#39;: 4,
+ &#39;private&#39;: 3,
+ &#39;ersatz&#39;: 1,
+ &#39;öffentliche&#39;: 7,
+ &#39;bedürfen&#39;: 19,
+ &#39;genehmigung&#39;: 7,
+ &#39;unterstehen&#39;: 4,
+ &#39;landesgesetzen&#39;: 2,
+ &#39;ihren&#39;: 10,
+ &#39;lehrzielen&#39;: 1,
+ &#39;einrichtungen&#39;: 17,
+ &#39;sowie&#39;: 43,
+ &#39;wissenschaftlichen&#39;: 3,
+ &#39;ausbildung&#39;: 3,
+ &#39;ihrer&#39;: 32,
+ &#39;lehrkräfte&#39;: 2,
+ &#39;hinter&#39;: 1,
+ &#39;zurückstehen&#39;: 1,
+ &#39;sonderung&#39;: 1,
+ &#39;schüler&#39;: 1,
+ &#39;nach&#39;: 134,
+ &#39;besitzverhältnissen&#39;: 1,
+ &#39;gefördert&#39;: 1,
+ &#39;wirtschaftliche&#39;: 3,
+ &#39;rechtliche&#39;: 1,
+ &#39;genügend&#39;: 1,
+ &#39;gesichert&#39;: 1,
+ &#39;volksschule&#39;: 2,
+ &#39;zuzulassen&#39;: 1,
+ &#39;unterrichtsverwaltung&#39;: 1,
+ &#39;besonderes&#39;: 4,
+ &#39;pädagogisches&#39;: 1,
+ &#39;interesse&#39;: 4,
+ &#39;anerkennt&#39;: 1,
+ &#39;antrag&#39;: 19,
+ &#39;gemeinschaftsschule&#39;: 1,
+ &#39;bekenntnis&#39;: 3,
+ &#39;weltanschauungsschule&#39;: 1,
+ &#39;errichtet&#39;: 6,
+ &#39;soll&#39;: 12,
+ &#39;art&#39;: 5,
+ &#39;gemeinde&#39;: 1,
+ &#39;besteht&#39;: 8,
+ &#39;vorschulen&#39;: 1,
+ &#39;bleiben&#39;: 10,
+ &#39;aufgehoben&#39;: 6,
+ &#39;ohne&#39;: 10,
+ &#39;anmeldung&#39;: 1,
+ &#39;erlaubnis&#39;: 1,
+ &#39;friedlich&#39;: 1,
+ &#39;waffen&#39;: 3,
+ &#39;versammeln&#39;: 1,
+ &#39;versammlungen&#39;: 1,
+ &#39;freiem&#39;: 1,
+ &#39;himmel&#39;: 1,
+ &#39;kann&#39;: 123,
+ &#39;beschränkt&#39;: 5,
+ &#39;9&#39;: 5,
+ &#39;vereine&#39;: 1,
+ &#39;gesellschaften&#39;: 1,
+ &#39;bilden&#39;: 5,
+ &#39;vereinigungen&#39;: 3,
+ &#39;deren&#39;: 20,
+ &#39;zwecke&#39;: 8,
+ &#39;tätigkeit&#39;: 2,
+ &#39;strafgesetzen&#39;: 1,
+ &#39;zuwiderlaufen&#39;: 1,
+ &#39;verfassungsmäßige&#39;: 6,
+ &#39;gedanken&#39;: 1,
+ &#39;völkerverständigung&#39;: 1,
+ &#39;richten&#39;: 6,
+ &#39;verboten&#39;: 1,
+ &#39;wahrung&#39;: 7,
+ &#39;förderung&#39;: 6,
+ &#39;arbeits&#39;: 3,
+ &#39;wirtschaftsbedingungen&#39;: 2,
+ &#39;jedermann&#39;: 5,
+ &#39;berufe&#39;: 1,
+ &#39;abreden&#39;: 1,
+ &#39;einschränken&#39;: 2,
+ &#39;behindern&#39;: 1,
+ &#39;suchen&#39;: 1,
+ &#39;nichtig&#39;: 1,
+ &#39;hierauf&#39;: 1,
+ &#39;gerichtete&#39;: 3,
+ &#39;maßnahmen&#39;: 21,
+ &#39;rechtswidrig&#39;: 1,
+ &#39;artikeln&#39;: 5,
+ &#39;12&#39;: 5,
+ &#39;a&#39;: 33,
+ &#39;35&#39;: 2,
+ &#39;87&#39;: 10,
+ &#39;91&#39;: 7,
+ &#39;arbeitskämpfe&#39;: 1,
+ &#39;sinne&#39;: 12,
+ &#39;satzes&#39;: 3,
+ &#39;geführt&#39;: 8,
+ &#39;10&#39;: 5,
+ &#39;briefgeheimnis&#39;: 1,
+ &#39;post&#39;: 4,
+ &#39;femmeldegeheimnis&#39;: 1,
+ &#39;beschränkungen&#39;: 4,
+ &#39;angeordnet&#39;: 4,
+ &#39;dient&#39;: 4,
+ &#39;beschränkung&#39;: 3,
+ &#39;freiheitlichen&#39;: 2,
+ &#39;demokratischen&#39;: 8,
+ &#39;grundordnung&#39;: 7,
+ &#39;bestandes&#39;: 2,
+ &#39;sicherung&#39;: 5,
+ &#39;bundes&#39;: 73,
+ &#39;landes&#39;: 35,
+ &#39;so&#39;: 59,
+ &#39;betroffenen&#39;: 12,
+ &#39;mitgeteilt&#39;: 1,
+ &#39;an&#39;: 54,
+ &#39;stelle&#39;: 8,
+ &#39;rechtsweges&#39;: 2,
+ &#39;nachprüfung&#39;: 1,
+ &#39;volksvertretung&#39;: 3,
+ &#39;bestellte&#39;: 1,
+ &#39;organe&#39;: 3,
+ &#39;hilfsorgane&#39;: 1,
+ &#39;tritt&#39;: 8,
+ &#39;11&#39;: 6,
+ &#39;genießen&#39;: 2,
+ &#39;freizügigkeit&#39;: 5,
+ &#39;ganzen&#39;: 2,
+ &#39;bundesgebiet&#39;: 11,
+ &#39;fälle&#39;: 3,
+ &#39;eingeschränkt&#39;: 4,
+ &#39;denen&#39;: 8,
+ &#39;ausreichende&#39;: 2,
+ &#39;lebensgrundlage&#39;: 1,
+ &#39;vorhanden&#39;: 1,
+ &#39;allgemeinheit&#39;: 5,
+ &#39;daraus&#39;: 2,
+ &#39;besondere&#39;: 10,
+ &#39;lasten&#39;: 2,
+ &#39;entstehen&#39;: 3,
+ &#39;würden&#39;: 1,
+ &#39;es&#39;: 61,
+ &#39;abwehr&#39;: 11,
+ &#39;einer&#39;: 55,
+ &#39;drohenden&#39;: 4,
+ &#39;gefahr&#39;: 17,
+ &#39;bestand&#39;: 6,
+ &#39;freiheitliche&#39;: 5,
+ &#39;demokratische&#39;: 5,
+ &#39;bekämpfung&#39;: 6,
+ &#39;seuchengefahr&#39;: 2,
+ &#39;naturkatastrophen&#39;: 1,
+ &#39;besonders&#39;: 7,
+ &#39;schweren&#39;: 2,
+ &#39;unglücksfällen&#39;: 1,
+ &#39;jugend&#39;: 1,
+ &#39;verwahrlosung&#39;: 1,
+ &#39;um&#39;: 15,
+ &#39;strafbaren&#39;: 2,
+ &#39;handlungen&#39;: 3,
+ &#39;vorzubeugen&#39;: 1,
+ &#39;erforderlich&#39;: 18,
+ &#39;beruf&#39;: 3,
+ &#39;arbeitsplatz&#39;: 2,
+ &#39;ausbildungsstätte&#39;: 1,
+ &#39;wählen&#39;: 2,
+ &#39;berufsausübung&#39;: 1,
+ &#39;geregelt&#39;: 22,
+ &#39;bestimmten&#39;: 4,
+ &#39;arbeit&#39;: 1,
+ &#39;außer&#39;: 15,
+ &#39;rahmen&#39;: 11,
+ &#39;herkömmlichen&#39;: 1,
+ &#39;dienstleistungspflicht&#39;: 1,
+ &#39;zwangsarbeit&#39;: 1,
+ &#39;bei&#39;: 76,
+ &#39;gerichtlich&#39;: 2,
+ &#39;angeordneten&#39;: 1,
+ &#39;freiheitsentziehung&#39;: 4,
+ &#39;zulässig&#39;: 10,
+ &#39;manner&#39;: 1,
+ &#39;können&#39;: 61,
+ &#39;vollendeten&#39;: 3,
+ &#39;achtzehnten&#39;: 2,
+ &#39;lebensjahr&#39;: 4,
+ &#39;dienst&#39;: 8,
+ &#39;streitkräften&#39;: 4,
+ &#39;bundesgrenzschutz&#39;: 3,
+ &#39;zivilschutzverband&#39;: 1,
+ &#39;wer&#39;: 11,
+ &#39;gewissensgründen&#39;: 1,
+ &#39;verweigert&#39;: 1,
+ &#39;ersatzdienst&#39;: 2,
+ &#39;dauer&#39;: 4,
+ &#39;ersatzdienstes&#39;: 4,
+ &#39;wehrdienstes&#39;: 1,
+ &#39;übersteigen&#39;: 1,
+ &#39;nähere&#39;: 36,
+ &#39;gewissensentscheidung&#39;: 1,
+ &#39;beeinträchtigen&#39;: 2,
+ &#39;auch&#39;: 40,
+ &#39;möglichkeit&#39;: 1,
+ &#39;vorsehen&#39;: 7,
+ &#39;muß&#39;: 13,
+ &#39;keinem&#39;: 3,
+ &#39;zusammenhang&#39;: 3,
+ &#39;verbänden&#39;: 1,
+ &#39;streitkräfte&#39;: 14,
+ &#39;bundesgrenzschutzes&#39;: 7,
+ &#39;wehrpflichtige&#39;: 1,
+ &#39;herangezogen&#39;: 2,
+ &#39;verteidigungsfalle&#39;: 13,
+ &#39;zivilen&#39;: 4,
+ &#39;dienstleistungen&#39;: 6,
+ &#39;verteidigung&#39;: 12,
+ &#39;einschließlich&#39;: 14,
+ &#39;schutzes&#39;: 6,
+ &#39;zivil&#39;: 1,
+ &#39;bevölkerung&#39;: 1,
+ &#39;arbeitsverhältnisse&#39;: 3,
+ &#39;verpflichtungen&#39;: 5,
+ &#39;öffentlichrechtliche&#39;: 2,
+ &#39;dienstverhaltnisse&#39;: 1,
+ &#39;wahrnehmung&#39;: 5,
+ &#39;polizeilicher&#39;: 2,
+ &#39;aufgaben&#39;: 24,
+ &#39;solcher&#39;: 5,
+ &#39;hoheitlichen&#39;: 1,
+ &#39;verwaltung&#39;: 25,
+ &#39;öffentlichrechtlichen&#39;: 4,
+ &#39;dienstverhaltnis&#39;: 1,
+ &#39;erfüllt&#39;: 2,
+ &#39;satz&#39;: 43,
+ &#39;bereich&#39;: 9,
+ &#39;versorgung&#39;: 4,
+ &#39;begründet&#39;: 3,
+ &#39;bereiche&#39;: 3,
+ &#39;zivilbevölkerung&#39;: 5,
+ &#39;iebensnotwendigen&#39;: 1,
+ &#39;bedarf&#39;: 46,
+ &#39;decken&#39;: 2,
+ &#39;sicherzustellen&#39;: 3,
+ &#39;sanitäts&#39;: 1,
+ &#39;heilwesen&#39;: 1,
+ &#39;ortsfesten&#39;: 1,
+ &#39;militarischen&#39;: 1,
+ &#39;lazarettorganisation&#39;: 1,
+ &#39;freiwilliger&#39;: 2,
+ &#39;gedeckt&#39;: 2,
+ &#39;fünfundfünfzigsten&#39;: 1,
+ &#39;derartigen&#39;: 1,
+ &#39;keinen&#39;: 4,
+ &#39;fall&#39;: 4,
+ &#39;zeit&#39;: 5,
+ &#39;maßgabe&#39;: 16,
+ &#39;artikels&#39;: 25,
+ &#39;80&#39;: 3,
+ &#39;vorbereitung&#39;: 4,
+ &#39;kenntnisse&#39;: 1,
+ &#39;fertigkeiten&#39;: 1,
+ &#39;ausbildungsveranstaltungen&#39;: 1,
+ &#39;gemacht&#39;: 4,
+ &#39;insoweit&#39;: 7,
+ &#39;keine&#39;: 12,
+ &#39;anwendung&#39;: 24,
+ &#39;arbeitskräften&#39;: 1,
+ &#39;genannten&#39;: 7,
+ &#39;bedarfs&#39;: 1,
+ &#39;ausübung&#39;: 9,
+ &#39;berufs&#39;: 1,
+ &#39;aufzugeben&#39;: 1,
+ &#39;eingeschrdnkt&#39;: 2,
+ &#39;eintrift&#39;: 1,
+ &#39;verteidigungsfalles&#39;: 14,
+ &#39;entsprechend&#39;: 9,
+ &#39;13&#39;: 3,
+ &#39;wohnung&#39;: 2,
+ &#39;durchsuchungen&#39;: 1,
+ &#39;richter&#39;: 19,
+ &#39;verzuge&#39;: 5,
+ &#39;gesetzen&#39;: 4,
+ &#39;vorgesehenen&#39;: 5,
+ &#39;dort&#39;: 2,
+ &#39;vorgeschriebenen&#39;: 2,
+ &#39;form&#39;: 3,
+ &#39;durchgeführt&#39;: 3,
+ &#39;begründen&#39;: 2,
+ &#39;bestimmte&#39;: 5,
+ &#39;tatsachen&#39;: 4,
+ &#39;verdacht&#39;: 1,
+ &#39;jemand&#39;: 3,
+ &#39;einzeln&#39;: 2,
+ &#39;schwere&#39;: 1,
+ &#39;straftat&#39;: 1,
+ &#39;begangen&#39;: 2,
+ &#39;verfolgung&#39;: 2,
+ &#39;tat&#39;: 5,
+ &#39;richterlicher&#39;: 4,
+ &#39;anordnung&#39;: 7,
+ &#39;technische&#39;: 3,
+ &#39;mittel&#39;: 8,
+ &#39;akustischen&#39;: 1,
+ &#39;überwachung&#39;: 1,
+ &#39;wohnungen&#39;: 3,
+ &#39;beschuldigte&#39;: 1,
+ &#39;vermutlich&#39;: 1,
+ &#39;aufhält&#39;: 1,
+ &#39;eingesetzt&#39;: 3,
+ &#39;erforschung&#39;: 1,
+ &#39;sachverhalts&#39;: 1,
+ &#39;andere&#39;: 16,
+ &#39;weise&#39;: 3,
+ &#39;unverhältnismäßig&#39;: 1,
+ &#39;erschwert&#39;: 1,
+ &#39;aussichtslos&#39;: 1,
+ &#39;wäre&#39;: 1,
+ &#39;maßnahme&#39;: 6,
+ &#39;befristen&#39;: 1,
+ &#39;erfolgt&#39;: 8,
+ &#39;einen&#39;: 29,
+ &#39;drei&#39;: 7,
+ &#39;richtern&#39;: 3,
+ &#39;besetzten&#39;: 1,
+ &#39;spruchkörper&#39;: 1,
+ &#39;einzelnen&#39;: 6,
+ &#39;getroffen&#39;: 5,
+ &#39;dringender&#39;: 2,
+ &#39;gefahren&#39;: 3,
+ &#39;sicherheit&#39;: 5,
+ &#39;insbesondere&#39;: 11,
+ &#39;gemeinen&#39;: 2,
+ &#39;lebensgefahr&#39;: 2,
+ &#39;uberwachung&#39;: 1,
+ &#39;gesetzlich&#39;: 8,
+ &#39;richterliche&#39;: 4,
+ &#39;entscheidung&#39;: 18,
+ &#39;unverzüglich&#39;: 12,
+ &#39;nachzuholen&#39;: 3,
+ &#39;ausschließlich&#39;: 2,
+ &#39;einsatz&#39;: 3,
+ &#39;tätigen&#39;: 2,
+ &#39;personen&#39;: 12,
+ &#39;vorgesehen&#39;: 5,
+ &#39;anderweitige&#39;: 1,
+ &#39;verwertung&#39;: 1,
+ &#39;hierbei&#39;: 5,
+ &#39;erlangten&#39;: 1,
+ &#39;erkenntnisse&#39;: 1,
+ &#39;strafverfolgung&#39;: 1,
+ &#39;gefahrenabwehr&#39;: 1,
+ &#39;zuvor&#39;: 1,
+ &#39;rechtmäßigkeit&#39;: 2,
+ &#39;richterlich&#39;: 2,
+ &#39;bundesregierung&#39;: 84,
+ &#39;unterrichtet&#39;: 1,
+ &#39;bundestag&#39;: 55,
+ &#39;jährlich&#39;: 2,
+ &#39;zuständigkeitsbereich&#39;: 4,
+ &#39;überprüfungsbedürftig&#39;: 1,
+ &#39;erfolgten&#39;: 1,
+ &#39;technischer&#39;: 1,
+ &#39;gewähltes&#39;: 1,
+ &#39;gremium&#39;: 1,
+ &#39;übt&#39;: 4,
+ &#39;berichts&#39;: 1,
+ &#39;kontrolle&#39;: 3,
+ &#39;gewährleisten&#39;: 3,
+ &#39;gleichwertige&#39;: 1,
+ &#39;eingriffe&#39;: 2,
+ &#39;übrigen&#39;: 13,
+ &#39;einzelne&#39;: 2,
+ &#39;verhütung&#39;: 2,
+ &#39;behebung&#39;: 1,
+ &#39;raumnot&#39;: 2,
+ &#39;gefährdeter&#39;: 1,
+ &#39;jugendlicher&#39;: 1,
+ &#39;vorgenommen&#39;: 3,
+ &#39;14&#39;: 5,
+ &#39;eigentum&#39;: 6,
+ &#39;erbrecht&#39;: 1,
+ &#39;inhalt&#39;: 3,
+ &#39;bestimmt&#39;: 39,
+ &#39;gebrauch&#39;: 2,
+ &#39;zugleich&#39;: 1,
+ &#39;wohle&#39;: 3,
+ &#39;enteignung&#39;: 2,
+ &#39;zulassig&#39;: 1,
+ &#39;erfolgen&#39;: 4,
+ &#39;ausmaß&#39;: 4,
+ &#39;entschadigung&#39;: 1,
+ &#39;entschädigung&#39;: 5,
+ &#39;gerechter&#39;: 1,
+ &#39;abwägung&#39;: 1,
+ &#39;interessen&#39;: 2,
+ &#39;höhe&#39;: 5,
+ &#39;streitfall&#39;: 1,
+ &#39;rechtsweg&#39;: 6,
+ &#39;ordentlichen&#39;: 2,
+ &#39;gerichten&#39;: 1,
+ &#39;offen&#39;: 3,
+ &#39;15&#39;: 3,
+ &#39;boden&#39;: 2,
+ &#39;naturschätze&#39;: 1,
+ &#39;produktionsmittel&#39;: 1,
+ &#39;vergesellschaftung&#39;: 1,
+ &#39;gemeineigentum&#39;: 2,
+ &#39;formen&#39;: 4,
+ &#39;gemeinwirtschaft&#39;: 2,
+ &#39;überführt&#39;: 1,
+ &#39;staatsangehörigkeit&#39;: 6,
+ &#39;entzogen&#39;: 5,
+ &#39;verlust&#39;: 1,
+ &#39;dann&#39;: 2,
+ &#39;eintreten&#39;: 1,
+ &#39;betroffene&#39;: 2,
+ &#39;dadurch&#39;: 4,
+ &#39;staatenlos&#39;: 1,
+ &#39;deutscher&#39;: 3,
+ &#39;ausland&#39;: 3,
+ &#39;ausgeliefert&#39;: 1,
+ &#39;abweichende&#39;: 4,
+ &#39;regelung&#39;: 21,
+ &#39;auslieferungen&#39;: 1,
+ &#39;mitgliedstaat&#39;: 3,
+ &#39;europäischen&#39;: 18,
+ &#39;union&#39;: 10,
+ &#39;internationalen&#39;: 2,
+ &#39;gerichtshof&#39;: 2,
+ &#39;rechtsstaatliche&#39;: 1,
+ &#39;grundsätze&#39;: 10,
+ &#39;gewahrt&#39;: 2,
+ &#39;politisch&#39;: 2,
+ &#39;verfolgte&#39;: 2,
+ &#39;asylrecht&#39;: 2,
+ &#39;berufen&#39;: 2,
+ &#39;gemeinschaften&#39;: 5,
+ &#39;drittstaat&#39;: 1,
+ &#39;einreist&#39;: 1,
+ &#39;abkommens&#39;: 1,
+ &#39;rechtsstellung&#39;: 6,
+ &#39;elüchtlinge&#39;: 1,
+ &#39;konvention&#39;: 2,
+ &#39;menschenrechte&#39;: 2,
+ &#39;grundfreiheiten&#39;: 2,
+ &#39;sichergestellt&#39;: 2,
+ &#39;staaten&#39;: 6,
+ &#39;außerhalb&#39;: 3,
+ &#39;voraussetzungen&#39;: 8,
+ &#39;zutreffen&#39;: 1,
+ &#39;zustimmung&#39;: 96,
+ &#39;bundesrates&#39;: 95,
+ &#39;fällen&#39;: 13,
+ &#39;aufenthaltsbeendende&#39;: 1,
+ &#39;unabhängig&#39;: 6,
+ &#39;hiergegen&#39;: 1,
+ &#39;eingelegten&#39;: 1,
+ &#39;rechtsbehelf&#39;: 1,
+ &#39;vollzogen&#39;: 1,
+ &#39;rechtslage&#39;: 1,
+ &#39;rechtsanwendung&#39;: 1,
+ &#39;verhältnisse&#39;: 6,
+ &#39;erscheint&#39;: 1,
+ &#39;weder&#39;: 9,
+ &#39;politische&#39;: 1,
+ &#39;noch&#39;: 11,
+ &#39;unmenschliche&#39;: 1,
+ &#39;erniedrigende&#39;: 1,
+ &#39;bestrafüng&#39;: 1,
+ &#39;behandlung&#39;: 2,
+ &#39;stattfindet&#39;: 2,
+ &#39;vermutet&#39;: 1,
+ &#39;ausländer&#39;: 2,
+ &#39;solchen&#39;: 3,
+ &#39;verfolgt&#39;: 3,
+ &#39;solange&#39;: 4,
+ &#39;vorträgt&#39;: 1,
+ &#39;annahme&#39;: 4,
+ &#39;entgegen&#39;: 3,
+ &#39;vermutung&#39;: 1,
+ &#39;vollziehung&#39;: 1,
+ &#39;aufenthaltsbeendender&#39;: 1,
+ &#39;absatzes&#39;: 12,
+ &#39;offensichtlich&#39;: 2,
+ &#39;unbegründet&#39;: 2,
+ &#39;gelten&#39;: 11,
+ &#39;gericht&#39;: 5,
+ &#39;ausgesetzt&#39;: 1,
+ &#39;ernstliche&#39;: 1,
+ &#39;zweifel&#39;: 1,
+ &#39;bestehen&#39;: 4,
+ &#39;prüfungsumfang&#39;: 1,
+ &#39;verspätetes&#39;: 1,
+ &#39;vorbringen&#39;: 1,
+ &#39;unberücksichtigt&#39;: 3,
+ &#39;absätze&#39;: 8,
+ &#39;völkerrechtlichen&#39;: 2,
+ &#39;verträgen&#39;: 2,
+ &#39;mitgliedstaaten&#39;: 1,
+ &#39;untereinander&#39;: 1,
+ &#39;dritten&#39;: 2,
+ &#39;beachtung&#39;: 2,
+ &#39;abkommen&#39;: 1,
+ &#39;flüchtlinge&#39;: 5,
+ &#39;vertragsstaaten&#39;: 1,
+ &#39;zuständigkeitsregelungen&#39;: 1,
+ &#39;prüfüng&#39;: 1,
+ &#39;asylbegehren&#39;: 1,
+ &#39;gegenseitigen&#39;: 1,
+ &#39;anerkennung&#39;: 1,
+ &#39;asylentscheidungen&#39;: 1,
+ &#39;treffen&#39;: 9,
+ &#39;17&#39;: 5,
+ &#39;schriftlich&#39;: 1,
+ &#39;bitten&#39;: 3,
+ &#39;beschwerden&#39;: 4,
+ &#39;zuständigen&#39;: 16,
+ &#39;stellen&#39;: 6,
+ &#39;wenden&#39;: 2,
+ &#39;wehrdienst&#39;: 1,
+ &#39;angehörigen&#39;: 3,
+ &#39;während&#39;: 5,
+ &#39;wehr&#39;: 1,
+ &#39;grundrecht&#39;: 5,
+ &#39;erster&#39;: 1,
+ &#39;halbsatz&#39;: 2,
+ &#39;versammlungsfreiheit&#39;: 2,
+ &#39;petitionsrecht&#39;: 1,
+ &#39;gewährt&#39;: 3,
+ &#39;vorzubringen&#39;: 1,
+ &#39;unverletzlichkeit&#39;: 1,
+ &#39;18&#39;: 5,
+ &#39;meinungsäußerung&#39;: 1,
+ &#39;lehrfreiheit&#39;: 1,
+ &#39;vereinigungsfreiheit&#39;: 1,
+ &#39;brief&#39;: 2,
+ &#39;fernmeldegeheimnis&#39;: 2,
+ &#39;kampfe&#39;: 1,
+ &#39;mißbraucht&#39;: 1,
+ &#39;verwirkt&#39;: 1,
+ &#39;verwirkung&#39;: 1,
+ &#39;ihr&#39;: 7,
+ &#39;bundesverfassungsgericht&#39;: 16,
+ &#39;ausgesprochen&#39;: 1,
+ &#39;19&#39;: 5,
+ &#39;diesem&#39;: 25,
+ &#39;einzelfall&#39;: 1,
+ &#39;außerdem&#39;: 3,
+ &#39;angabe&#39;: 1,
+ &#39;nennen&#39;: 1,
+ &#39;falle&#39;: 8,
+ &#39;seinem&#39;: 6,
+ &#39;wesensgehalt&#39;: 1,
+ &#39;angetastet&#39;: 1,
+ &#39;inländische&#39;: 1,
+ &#39;juristische&#39;: 1,
+ &#39;ihrem&#39;: 4,
+ &#39;wesen&#39;: 1,
+ &#39;anwendbar&#39;: 1,
+ &#39;rechten&#39;: 2,
+ &#39;ihm&#39;: 18,
+ &#39;zuständigkeit&#39;: 3,
+ &#39;ordentliche&#39;: 2,
+ &#39;bleibt&#39;: 9,
+ &#39;unberührt&#39;: 7,
+ &#39;ii&#39;: 2,
+ &#39;bund&#39;: 85,
+ &#39;20&#39;: 5,
+ &#39;demokratischer&#39;: 1,
+ &#39;sozialer&#39;: 1,
+ &#39;bundesstaat&#39;: 1,
+ &#39;staatsgewalt&#39;: 1,
+ &#39;geht&#39;: 5,
+ &#39;volke&#39;: 3,
+ &#39;wahlen&#39;: 4,
+ &#39;abstimmungen&#39;: 1,
+ &#39;vollziehenden&#39;: 1,
+ &#39;ausgeübt&#39;: 4,
+ &#39;gebunden&#39;: 4,
+ &#39;jeden&#39;: 1,
+ &#39;unternimmt&#39;: 1,
+ &#39;beseitigen&#39;: 2,
+ &#39;widerstand&#39;: 1,
+ &#39;abhilfe&#39;: 1,
+ &#39;möglich&#39;: 2,
+ &#39;schützt&#39;: 1,
+ &#39;künftigen&#39;: 2,
+ &#39;generationen&#39;: 1,
+ &#39;natürlichen&#39;: 1,
+ &#39;lebensgrundlagen&#39;: 1,
+ &#39;tiere&#39;: 1,
+ &#39;verfassungsmäßigen&#39;: 2,
+ &#39;21&#39;: 2,
+ &#39;parteien&#39;: 2,
+ &#39;wirken&#39;: 4,
+ &#39;willensbildung&#39;: 3,
+ &#39;volks&#39;: 1,
+ &#39;gründung&#39;: 1,
+ &#39;innere&#39;: 1,
+ &#39;entsprechen&#39;: 3,
+ &#39;müssen&#39;: 8,
+ &#39;verwendung&#39;: 1,
+ &#39;vermögen&#39;: 10,
+ &#39;öffentlich&#39;: 3,
+ &#39;rechenschaft&#39;: 1,
+ &#39;geben&#39;: 2,
+ &#39;zielen&#39;: 1,
+ &#39;verhalten&#39;: 1,
+ &#39;anhänger&#39;: 1,
+ &#39;darauf&#39;: 4,
+ &#39;ausgehen&#39;: 1,
+ &#39;gefährden&#39;: 3,
+ &#39;verfassungswidrig&#39;: 3,
+ &#39;frage&#39;: 2,
+ &#39;verfassungswidrigkeit&#39;: 1,
+ &#39;entscheidet&#39;: 10,
+ &#39;regeln&#39;: 13,
+ &#39;bundesgesetze&#39;: 18,
+ &#39;bundesflagge&#39;: 1,
+ &#39;schwarzrotgold&#39;: 1,
+ &#39;verwirklichung&#39;: 1,
+ &#39;europas&#39;: 1,
+ &#39;rechtsstaatlichen&#39;: 1,
+ &#39;sozialen&#39;: 3,
+ &#39;föderativen&#39;: 1,
+ &#39;grundsatz&#39;: 1,
+ &#39;subsidiarität&#39;: 1,
+ &#39;wesentlichen&#39;: 1,
+ &#39;vergleichbaren&#39;: 1,
+ &#39;grundrechtsschutz&#39;: 1,
+ &#39;hierzu&#39;: 3,
+ &#39;hoheitsrechte&#39;: 4,
+ &#39;übertragen&#39;: 21,
+ &#39;begründung&#39;: 1,
+ &#39;änderungen&#39;: 4,
+ &#39;vertraglichen&#39;: 1,
+ &#39;grundlagen&#39;: 3,
+ &#39;vergleichbare&#39;: 1,
+ &#39;regelungen&#39;: 5,
+ &#39;ergänzt&#39;: 2,
+ &#39;solche&#39;: 6,
+ &#39;ergänzungen&#39;: 1,
+ &#39;ermöglicht&#39;: 1,
+ &#39;79&#39;: 3,
+ &#39;angelegenheiten&#39;: 14,
+ &#39;bundesrat&#39;: 39,
+ &#39;umfassend&#39;: 1,
+ &#39;frühestmöglichen&#39;: 1,
+ ...}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="worthaufigkeiten-sortieren">
+<h2>Worthäufigkeiten sortieren<a class="headerlink" href="#worthaufigkeiten-sortieren" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">freq_sort</span><span class="p">(</span><span class="n">list_to_search</span><span class="p">):</span>
+    <span class="n">counts</span> <span class="o">=</span> <span class="n">counter_dict</span><span class="p">(</span><span class="n">list_to_search</span><span class="p">)</span>
+    <span class="n">counts</span> <span class="o">=</span> <span class="p">[(</span><span class="n">counts</span><span class="p">[</span><span class="n">key</span><span class="p">],</span> <span class="n">key</span><span class="p">)</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">counts</span><span class="p">]</span>
+    <span class="n">counts</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+    <span class="n">counts</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">counts</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">freq_sort</span><span class="p">(</span><span class="n">grundgesetz_words</span><span class="p">)[:</span><span class="mi">25</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(932, &#39;der&#39;),
+ (859, &#39;die&#39;),
+ (577, &#39;und&#39;),
+ (495, &#39;des&#39;),
+ (303, &#39;das&#39;),
+ (283, &#39;den&#39;),
+ (269, &#39;oder&#39;),
+ (263, &#39;artikel&#39;),
+ (241, &#39;in&#39;),
+ (219, &#39;1&#39;),
+ (207, &#39;werden&#39;),
+ (201, &#39;2&#39;),
+ (192, &#39;zu&#39;),
+ (189, &#39;von&#39;),
+ (176, &#39;durch&#39;),
+ (162, &#39;für&#39;),
+ (160, &#39;ist&#39;),
+ (154, &#39;auf&#39;),
+ (139, &#39;dem&#39;),
+ (134, &#39;nach&#39;),
+ (132, &#39;im&#39;),
+ (131, &#39;3&#39;),
+ (128, &#39;mit&#39;),
+ (123, &#39;kann&#39;),
+ (120, &#39;nicht&#39;)]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="entfernen-von-stoppwortern">
+<h2>Entfernen von Stoppwörtern<a class="headerlink" href="#entfernen-von-stoppwortern" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">remove_stopwords</span><span class="p">(</span><span class="n">list_to_search</span><span class="p">):</span>
+    <span class="n">stopword_url</span> <span class="o">=</span> <span class="s2">&quot;http://members.unine.ch/jacques.savoy/clef/germanST.txt&quot;</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">stopword_url</span><span class="p">)</span>
+    <span class="n">stopwords</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span>
+    <span class="n">stopwords</span> <span class="o">=</span> <span class="n">stopwords</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">w</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">list_to_search</span> <span class="k">if</span> <span class="n">w</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">stopwords</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">remove_stopwords</span><span class="p">(</span><span class="n">grundgesetz_words</span><span class="p">)[:</span><span class="mi">25</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;grundgesetz&#39;,
+ &#39;bundesrepublik&#39;,
+ &#39;deutschland&#39;,
+ &#39;23&#39;,
+ &#39;mai&#39;,
+ &#39;1949&#39;,
+ &#39;bgbl&#39;,
+ &#39;1&#39;,
+ &#39;zuletzt&#39;,
+ &#39;geändert&#39;,
+ &#39;gesetz&#39;,
+ &#39;änderung&#39;,
+ &#39;grundgesetzes&#39;,
+ &#39;artikel&#39;,
+ &#39;96&#39;,
+ &#39;26&#39;,
+ &#39;7&#39;,
+ &#39;2002&#39;,
+ &#39;bgbl&#39;,
+ &#39;2863&#39;,
+ &#39;parlamentarische&#39;,
+ &#39;rat&#39;,
+ &#39;23&#39;,
+ &#39;mai&#39;,
+ &#39;1949&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="entfernen-von-zahlen-mit-regularem-ausdruck">
+<h2>Entfernen von Zahlen mit regulärem Ausdruck<a class="headerlink" href="#entfernen-von-zahlen-mit-regularem-ausdruck" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="n">RE_INT</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\d+&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">remove_digit</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">RE_INT</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="funktionsaufrufe">
+<h2>Funktionsaufrufe<a class="headerlink" href="#funktionsaufrufe" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grundgesetz</span> <span class="o">=</span> <span class="n">grundgesetz</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="n">grundgesetz</span> <span class="o">=</span> <span class="n">remove_punctuation</span><span class="p">(</span><span class="n">grundgesetz</span><span class="p">)</span>
+<span class="n">grundgesetz</span> <span class="o">=</span> <span class="n">remove_digit</span><span class="p">(</span><span class="n">grundgesetz</span><span class="p">)</span>
+<span class="n">grundgesetz_words</span> <span class="o">=</span> <span class="n">grundgesetz</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="n">grundgesetz_words</span> <span class="o">=</span> <span class="n">remove_stopwords</span><span class="p">(</span><span class="n">grundgesetz_words</span><span class="p">)</span>
+<span class="n">freq_sort</span><span class="p">(</span><span class="n">grundgesetz_words</span><span class="p">)[:</span><span class="mi">25</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(263, &#39;artikel&#39;),
+ (112, &#39;länder&#39;),
+ (99, &#39;absatz&#39;),
+ (96, &#39;zustimmung&#39;),
+ (95, &#39;bundesrates&#39;),
+ (85, &#39;bund&#39;),
+ (84, &#39;bundesregierung&#39;),
+ (80, &#39;soweit&#39;),
+ (78, &#39;bundesgesetz&#39;),
+ (73, &#39;bundes&#39;),
+ (65, &#39;gesetz&#39;),
+ (58, &#39;bundestages&#39;),
+ (57, &#39;ländern&#39;),
+ (55, &#39;bundestag&#39;),
+ (46, &#39;bedarf&#39;),
+ (43, &#39;satz&#39;),
+ (42, &#39;gemeinden&#39;),
+ (41, &#39;mehrheit&#39;),
+ (39, &#39;gesetze&#39;),
+ (39, &#39;bundesrat&#39;),
+ (39, &#39;bestimmt&#39;),
+ (38, &#39;grund&#39;),
+ (37, &#39;mitglieder&#39;),
+ (36, &#39;nähere&#39;),
+ (35, &#39;landes&#39;)]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "base2exp"
+        },
+        kernelOptions: {
+            kernelName: "base2exp",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'base2exp'</script>
+
+              </div>
+              
+            </div>
+        </div>
+    </div>
+    <div id="main-content" class="row noprint">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="funktionen-textprocessing">
+<h1>Funktionen Textprocessing<a class="headerlink" href="#funktionen-textprocessing" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="text-datei-runterladen">
+<h2>Text-Datei runterladen<a class="headerlink" href="#text-datei-runterladen" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">gg_raw_url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/levinalex/deutsche_verfassungen/master/grundgesetz/grundgesetz.txt&quot;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">gg_raw_url</span><span class="p">)</span>
+<span class="n">grundgesetz</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span>
+
+<span class="n">grundgesetz</span><span class="p">[:</span><span class="mi">1000</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Grundgesetz für die Bundesrepublik Deutschland\n\nVom 23. Mai 1949 (BGBl. S. 1)\n\nZuletzt geändert durch das Gesetz zur Änderung des Grundgesetzes (Artikel 96) vom 26. 7. 2002 (BGBl. I S. 2863)\n\n\n\n\n\n\n\nDer Parlamentarische Rat hat am 23. Mai 1949 in Bonn am Rhein in öffentlicher Sitzung festgestellt, daß das am 8. Mai des Jahres 1949 vom Parlamentarischen Rat beschlossene Grundgesetz für die Bundesrepublik Deutschland in der Woche vom 16. bis 22. Mai 1949 durch die Volksvertretungen von mehr als zwei Dritteln der beteiligten deutschen Länder angenommen worden ist.\nAuf Grund dieser Feststellung hat der Parlamentarische Rat, vertreten durch seine Präsidenten, das Grundgesetz ausgefertigt und verkündet.\n\nDas Grundgesetz wird hiermit gemäß Artikel 145 Absatz 3 im Bundesgesetzblatt veröffentlicht.\n\n\nPräambel\n\nIm Bewußtsein seiner Verantwortung vor Gott und den Menschen, von dem Willen beseelt, als gleichberechtigtes Glied in einem vereinten Europa dem Frieden der Welt zu dienen, hat sich das De&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="text-datei-speichern">
+<h2>Text-Datei speichern<a class="headerlink" href="#text-datei-speichern" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;grundgesetz.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">grundgesetz</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="kleinschreibung-vereinheitlichen">
+<h2>Kleinschreibung vereinheitlichen<a class="headerlink" href="#kleinschreibung-vereinheitlichen" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grundgesetz</span> <span class="o">=</span> <span class="n">grundgesetz</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">grundgesetz</span><span class="p">[:</span><span class="mi">250</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>grundgesetz für die bundesrepublik deutschland
+
+vom 23. mai 1949 (bgbl. s. 1)
+
+zuletzt geändert durch das gesetz zur änderung des grundgesetzes (artikel 96) vom 26. 7. 2002 (bgbl. i s. 2863)
+
+
+
+
+
+
+
+der parlamentarische rat hat am 23. mai 1949 in bonn
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="zeichensetzung-entfernen">
+<h2>Zeichensetzung entfernen<a class="headerlink" href="#zeichensetzung-entfernen" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">string</span>
+
+<span class="k">def</span> <span class="nf">remove_punctuation</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="n">punctuation</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">punctuation</span>
+    <span class="k">for</span> <span class="n">marker</span> <span class="ow">in</span> <span class="n">punctuation</span><span class="p">:</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">marker</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">text</span>
+
+<span class="n">grundgesetz</span> <span class="o">=</span> <span class="n">remove_punctuation</span><span class="p">(</span><span class="n">grundgesetz</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">grundgesetz</span><span class="p">[:</span><span class="mi">250</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>grundgesetz für die bundesrepublik deutschland
+
+vom 23 mai 1949 bgbl s 1
+
+zuletzt geändert durch das gesetz zur änderung des grundgesetzes artikel 96 vom 26 7 2002 bgbl i s 2863
+
+
+
+
+
+
+
+der parlamentarische rat hat am 23 mai 1949 in bonn am rhein in ö
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="liste-erstellen">
+<h2>Liste erstellen<a class="headerlink" href="#liste-erstellen" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grundgesetz_words</span> <span class="o">=</span> <span class="n">grundgesetz</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Anzahl aller Worte des Textes: &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">grundgesetz_words</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=======&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">grundgesetz_words</span><span class="p">[:</span><span class="mi">25</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Anzahl aller Worte des Textes: 
+19127
+=======
+[&#39;grundgesetz&#39;, &#39;für&#39;, &#39;die&#39;, &#39;bundesrepublik&#39;, &#39;deutschland&#39;, &#39;vom&#39;, &#39;23&#39;, &#39;mai&#39;, &#39;1949&#39;, &#39;bgbl&#39;, &#39;s&#39;, &#39;1&#39;, &#39;zuletzt&#39;, &#39;geändert&#39;, &#39;durch&#39;, &#39;das&#39;, &#39;gesetz&#39;, &#39;zur&#39;, &#39;änderung&#39;, &#39;des&#39;, &#39;grundgesetzes&#39;, &#39;artikel&#39;, &#39;96&#39;, &#39;vom&#39;, &#39;26&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="zahlen-eines-bestimmten-worts">
+<h2>Zählen eines bestimmten Worts<a class="headerlink" href="#zahlen-eines-bestimmten-worts" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count_item_in_text</span><span class="p">(</span><span class="n">item_to_count</span><span class="p">,</span> <span class="n">list_to_search</span><span class="p">):</span>
+    <span class="n">number_of_hits</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">list_to_search</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">item</span> <span class="o">==</span> <span class="n">item_to_count</span><span class="p">:</span>
+            <span class="n">number_of_hits</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">number_of_hits</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">count_item_in_text</span><span class="p">(</span><span class="s2">&quot;bund&quot;</span><span class="p">,</span> <span class="n">grundgesetz_words</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>85
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="alle-worter-zahlen-mit-hilfe-eines-dictionarys">
+<h2>Alle Wörter zählen mit Hilfe eines Dictionarys<a class="headerlink" href="#alle-worter-zahlen-mit-hilfe-eines-dictionarys" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">counter_dict</span><span class="p">(</span><span class="n">list_to_search</span><span class="p">):</span>
+    <span class="n">counts</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">list_to_search</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">counts</span><span class="p">:</span>
+            <span class="n">counts</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">=</span> <span class="n">counts</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>  
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">counts</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">counts</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">counter_dict</span><span class="p">(</span><span class="n">grundgesetz_words</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;grundgesetz&#39;: 27,
+ &#39;für&#39;: 162,
+ &#39;die&#39;: 859,
+ &#39;bundesrepublik&#39;: 10,
+ &#39;deutschland&#39;: 9,
+ &#39;vom&#39;: 43,
+ &#39;23&#39;: 9,
+ &#39;mai&#39;: 10,
+ &#39;1949&#39;: 5,
+ &#39;bgbl&#39;: 2,
+ &#39;s&#39;: 2,
+ &#39;1&#39;: 219,
+ &#39;zuletzt&#39;: 1,
+ &#39;geändert&#39;: 13,
+ &#39;durch&#39;: 176,
+ &#39;das&#39;: 303,
+ &#39;gesetz&#39;: 65,
+ &#39;zur&#39;: 99,
+ &#39;änderung&#39;: 9,
+ &#39;des&#39;: 495,
+ &#39;grundgesetzes&#39;: 30,
+ &#39;artikel&#39;: 263,
+ &#39;96&#39;: 2,
+ &#39;26&#39;: 4,
+ &#39;7&#39;: 14,
+ &#39;2002&#39;: 1,
+ &#39;i&#39;: 3,
+ &#39;2863&#39;: 1,
+ &#39;der&#39;: 932,
+ &#39;parlamentarische&#39;: 5,
+ &#39;rat&#39;: 5,
+ &#39;hat&#39;: 71,
+ &#39;am&#39;: 15,
+ &#39;in&#39;: 241,
+ &#39;bonn&#39;: 1,
+ &#39;rhein&#39;: 1,
+ &#39;öffentlicher&#39;: 4,
+ &#39;sitzung&#39;: 3,
+ &#39;festgestellt&#39;: 6,
+ &#39;daß&#39;: 59,
+ &#39;8&#39;: 14,
+ &#39;jahres&#39;: 2,
+ &#39;parlamentarischen&#39;: 3,
+ &#39;beschlossene&#39;: 2,
+ &#39;woche&#39;: 1,
+ &#39;16&#39;: 5,
+ &#39;bis&#39;: 35,
+ &#39;22&#39;: 3,
+ &#39;volksvertretungen&#39;: 4,
+ &#39;von&#39;: 189,
+ &#39;mehr&#39;: 25,
+ &#39;als&#39;: 67,
+ &#39;zwei&#39;: 24,
+ &#39;dritteln&#39;: 14,
+ &#39;beteiligten&#39;: 10,
+ &#39;deutschen&#39;: 27,
+ &#39;länder&#39;: 112,
+ &#39;angenommen&#39;: 1,
+ &#39;worden&#39;: 15,
+ &#39;ist&#39;: 160,
+ &#39;auf&#39;: 154,
+ &#39;grund&#39;: 38,
+ &#39;dieser&#39;: 22,
+ &#39;feststellung&#39;: 11,
+ &#39;vertreten&#39;: 4,
+ &#39;seine&#39;: 12,
+ &#39;präsidenten&#39;: 8,
+ &#39;ausgefertigt&#39;: 3,
+ &#39;und&#39;: 577,
+ &#39;verkündet&#39;: 7,
+ &#39;wird&#39;: 81,
+ &#39;hiermit&#39;: 1,
+ &#39;gemäß&#39;: 18,
+ &#39;145&#39;: 2,
+ &#39;absatz&#39;: 98,
+ &#39;3&#39;: 131,
+ &#39;im&#39;: 132,
+ &#39;bundesgesetzblatt&#39;: 2,
+ &#39;veröffentlicht&#39;: 1,
+ &#39;präambel&#39;: 1,
+ &#39;bewußtsein&#39;: 1,
+ &#39;seiner&#39;: 53,
+ &#39;verantwortung&#39;: 11,
+ &#39;vor&#39;: 24,
+ &#39;gott&#39;: 2,
+ &#39;den&#39;: 283,
+ &#39;menschen&#39;: 5,
+ &#39;dem&#39;: 139,
+ &#39;willen&#39;: 6,
+ &#39;beseelt&#39;: 1,
+ &#39;gleichberechtigtes&#39;: 1,
+ &#39;glied&#39;: 1,
+ &#39;einem&#39;: 50,
+ &#39;vereinten&#39;: 2,
+ &#39;europa&#39;: 2,
+ &#39;frieden&#39;: 1,
+ &#39;welt&#39;: 3,
+ &#39;zu&#39;: 192,
+ &#39;dienen&#39;: 7,
+ &#39;sich&#39;: 43,
+ &#39;deutsche&#39;: 13,
+ &#39;volk&#39;: 5,
+ &#39;kraft&#39;: 15,
+ &#39;verfassungsgebenden&#39;: 1,
+ &#39;gewalt&#39;: 11,
+ &#39;dieses&#39;: 46,
+ &#39;gegeben&#39;: 4,
+ &#39;ländern&#39;: 57,
+ &#39;badenwürttemberg&#39;: 1,
+ &#39;bayern&#39;: 2,
+ &#39;berlin&#39;: 2,
+ &#39;brandenburg&#39;: 2,
+ &#39;bremen&#39;: 1,
+ &#39;hamburg&#39;: 1,
+ &#39;hessen&#39;: 1,
+ &#39;mecklenburgvorpommern&#39;: 1,
+ &#39;niedersachsen&#39;: 1,
+ &#39;nordrheinwestfalen&#39;: 1,
+ &#39;rheinlandpfalz&#39;: 2,
+ &#39;saarland&#39;: 1,
+ &#39;sachsen&#39;: 1,
+ &#39;sachsenanhalt&#39;: 1,
+ &#39;schleswigholstein&#39;: 1,
+ &#39;thüringen&#39;: 1,
+ &#39;haben&#39;: 30,
+ &#39;freier&#39;: 3,
+ &#39;selbstbestimmung&#39;: 1,
+ &#39;einheit&#39;: 3,
+ &#39;freiheit&#39;: 13,
+ &#39;deutschlands&#39;: 2,
+ &#39;vollendet&#39;: 3,
+ &#39;damit&#39;: 1,
+ &#39;gilt&#39;: 30,
+ &#39;gesamte&#39;: 3,
+ &#39;grundrechte&#39;: 8,
+ &#39;würde&#39;: 2,
+ &#39;unantastbar&#39;: 1,
+ &#39;sie&#39;: 74,
+ &#39;achten&#39;: 1,
+ &#39;schützen&#39;: 2,
+ &#39;verpflichtung&#39;: 2,
+ &#39;aller&#39;: 3,
+ &#39;staatlichen&#39;: 9,
+ &#39;2&#39;: 201,
+ &#39;bekennt&#39;: 1,
+ &#39;darum&#39;: 1,
+ &#39;unverletzlichen&#39;: 1,
+ &#39;unveräußerlichen&#39;: 1,
+ &#39;menschenrechten&#39;: 1,
+ &#39;grundlage&#39;: 7,
+ &#39;jeder&#39;: 14,
+ &#39;menschlichen&#39;: 1,
+ &#39;gemeinschaft&#39;: 8,
+ &#39;friedens&#39;: 2,
+ &#39;gerechtigkeit&#39;: 2,
+ &#39;nachfolgenden&#39;: 2,
+ &#39;binden&#39;: 1,
+ &#39;gesetzgebung&#39;: 33,
+ &#39;vollziehende&#39;: 3,
+ &#39;rechtsprechung&#39;: 6,
+ &#39;unmittelbar&#39;: 8,
+ &#39;geltendes&#39;: 2,
+ &#39;recht&#39;: 54,
+ &#39;freie&#39;: 1,
+ &#39;entfaltung&#39;: 1,
+ &#39;persönlichkeit&#39;: 1,
+ &#39;soweit&#39;: 80,
+ &#39;er&#39;: 33,
+ &#39;nicht&#39;: 120,
+ &#39;rechte&#39;: 22,
+ &#39;anderer&#39;: 16,
+ &#39;verletzt&#39;: 5,
+ &#39;gegen&#39;: 26,
+ &#39;verfassungsmaßige&#39;: 1,
+ &#39;ordnung&#39;: 15,
+ &#39;oder&#39;: 269,
+ &#39;sittengesetz&#39;: 1,
+ &#39;verstößt&#39;: 2,
+ &#39;leben&#39;: 1,
+ &#39;körperliche&#39;: 1,
+ &#39;unversehrtheit&#39;: 1,
+ &#39;person&#39;: 4,
+ &#39;unverletzlich&#39;: 4,
+ &#39;diese&#39;: 32,
+ &#39;darf&#39;: 31,
+ &#39;nur&#39;: 60,
+ &#39;eines&#39;: 93,
+ &#39;gesetzes&#39;: 18,
+ &#39;eingegriffen&#39;: 1,
+ &#39;werden&#39;: 207,
+ &#39;alle&#39;: 18,
+ &#39;sind&#39;: 109,
+ &#39;gleich&#39;: 1,
+ &#39;männer&#39;: 1,
+ &#39;frauen&#39;: 3,
+ &#39;gleichberechtigt&#39;: 1,
+ &#39;staat&#39;: 4,
+ &#39;fördert&#39;: 1,
+ &#39;tatsächliche&#39;: 1,
+ &#39;durchsetzung&#39;: 1,
+ &#39;gleichberechtigung&#39;: 1,
+ &#39;männern&#39;: 1,
+ &#39;wirkt&#39;: 3,
+ &#39;beseitigung&#39;: 5,
+ &#39;bestehender&#39;: 5,
+ &#39;nachteile&#39;: 1,
+ &#39;hin&#39;: 1,
+ &#39;niemand&#39;: 7,
+ &#39;wegen&#39;: 11,
+ &#39;seines&#39;: 8,
+ &#39;geschlechtes&#39;: 1,
+ &#39;abstammung&#39;: 1,
+ &#39;rasse&#39;: 1,
+ &#39;sprache&#39;: 1,
+ &#39;heimat&#39;: 1,
+ &#39;herkunft&#39;: 2,
+ &#39;glaubens&#39;: 2,
+ &#39;religiösen&#39;: 4,
+ &#39;politischen&#39;: 5,
+ &#39;anschauungen&#39;: 1,
+ &#39;benachteiligt&#39;: 2,
+ &#39;bevorzugt&#39;: 1,
+ &#39;behinderung&#39;: 1,
+ &#39;4&#39;: 65,
+ &#39;gewissens&#39;: 1,
+ &#39;weltanschaulichen&#39;: 1,
+ &#39;bekenntnisses&#39;: 1,
+ &#39;ungestörte&#39;: 1,
+ &#39;religionsausübung&#39;: 1,
+ &#39;gewährleistet&#39;: 11,
+ &#39;sein&#39;: 7,
+ &#39;gewissen&#39;: 2,
+ &#39;zum&#39;: 54,
+ &#39;kriegsdienst&#39;: 2,
+ &#39;mit&#39;: 128,
+ &#39;waffe&#39;: 3,
+ &#39;gezwungen&#39;: 2,
+ &#39;nahere&#39;: 1,
+ &#39;regelt&#39;: 25,
+ &#39;ein&#39;: 95,
+ &#39;bundesgesetz&#39;: 78,
+ &#39;5&#39;: 39,
+ &#39;meinung&#39;: 2,
+ &#39;wort&#39;: 2,
+ &#39;schrift&#39;: 2,
+ &#39;bild&#39;: 2,
+ &#39;frei&#39;: 7,
+ &#39;äußern&#39;: 2,
+ &#39;verbreiten&#39;: 2,
+ &#39;aus&#39;: 59,
+ &#39;allgemein&#39;: 2,
+ &#39;zugänglichen&#39;: 1,
+ &#39;quellen&#39;: 2,
+ &#39;ungehindert&#39;: 1,
+ &#39;unterrichten&#39;: 5,
+ &#39;pressefreiheit&#39;: 2,
+ &#39;berichterstattung&#39;: 1,
+ &#39;rundfunk&#39;: 1,
+ &#39;film&#39;: 1,
+ &#39;eine&#39;: 87,
+ &#39;zensur&#39;: 1,
+ &#39;findet&#39;: 18,
+ &#39;statt&#39;: 5,
+ &#39;finden&#39;: 3,
+ &#39;ihre&#39;: 23,
+ &#39;schranken&#39;: 2,
+ &#39;vorschriften&#39;: 14,
+ &#39;allgemeinen&#39;: 13,
+ &#39;gesetze&#39;: 39,
+ &#39;gesetzlichen&#39;: 5,
+ &#39;bestimmungen&#39;: 12,
+ &#39;schutze&#39;: 10,
+ &#39;derjugend&#39;: 1,
+ &#39;persönlichen&#39;: 3,
+ &#39;ehre&#39;: 1,
+ &#39;kunst&#39;: 1,
+ &#39;wissenschaft&#39;: 1,
+ &#39;forschung&#39;: 3,
+ &#39;lehre&#39;: 2,
+ &#39;entbindet&#39;: 1,
+ &#39;treue&#39;: 1,
+ &#39;verfassung&#39;: 5,
+ &#39;6&#39;: 18,
+ &#39;ehe&#39;: 1,
+ &#39;familie&#39;: 2,
+ &#39;stehen&#39;: 12,
+ &#39;unter&#39;: 25,
+ &#39;besonderen&#39;: 3,
+ &#39;pflege&#39;: 2,
+ &#39;erziehung&#39;: 1,
+ &#39;kinder&#39;: 3,
+ &#39;natürliche&#39;: 1,
+ &#39;eltern&#39;: 2,
+ &#39;zuvörderst&#39;: 1,
+ &#39;ihnen&#39;: 7,
+ &#39;obliegende&#39;: 2,
+ &#39;pflicht&#39;: 5,
+ &#39;über&#39;: 80,
+ &#39;betätigung&#39;: 1,
+ &#39;wacht&#39;: 1,
+ &#39;staatliche&#39;: 1,
+ &#39;erziehungsberechtigten&#39;: 4,
+ &#39;dürfen&#39;: 21,
+ &#39;getrennt&#39;: 3,
+ &#39;wenn&#39;: 62,
+ &#39;versagen&#39;: 3,
+ &#39;anderen&#39;: 20,
+ &#39;gründen&#39;: 6,
+ &#39;verwahrlosen&#39;: 1,
+ &#39;drohen&#39;: 1,
+ &#39;jede&#39;: 5,
+ &#39;mutter&#39;: 1,
+ &#39;anspruch&#39;: 6,
+ &#39;schutz&#39;: 9,
+ &#39;fürsorge&#39;: 3,
+ &#39;unehelichen&#39;: 1,
+ &#39;kindern&#39;: 3,
+ &#39;gleichen&#39;: 10,
+ &#39;bedingungen&#39;: 2,
+ &#39;leibliche&#39;: 1,
+ &#39;seelische&#39;: 1,
+ &#39;entwicklung&#39;: 2,
+ &#39;stellung&#39;: 7,
+ &#39;gesellschaft&#39;: 1,
+ &#39;schaffen&#39;: 1,
+ &#39;wie&#39;: 3,
+ &#39;ehelichen&#39;: 1,
+ &#39;schulwesen&#39;: 1,
+ &#39;steht&#39;: 16,
+ &#39;aufsicht&#39;: 3,
+ &#39;staates&#39;: 2,
+ &#39;teilnahme&#39;: 2,
+ &#39;kindes&#39;: 1,
+ &#39;religionsunterricht&#39;: 4,
+ &#39;bestimmen&#39;: 24,
+ &#39;öffentlichen&#39;: 34,
+ &#39;schulen&#39;: 7,
+ &#39;ausnahme&#39;: 2,
+ &#39;bekenntnisfreien&#39;: 1,
+ &#39;ordentliches&#39;: 1,
+ &#39;lehrfach&#39;: 1,
+ &#39;unbeschadet&#39;: 2,
+ &#39;aufsichtsrechtes&#39;: 1,
+ &#39;übereinstimmung&#39;: 2,
+ &#39;grundsätzen&#39;: 7,
+ &#39;religionsgemeinschaften&#39;: 1,
+ &#39;erteilt&#39;: 4,
+ &#39;kein&#39;: 6,
+ &#39;lehrer&#39;: 1,
+ &#39;seinen&#39;: 7,
+ &#39;verpflichtet&#39;: 13,
+ &#39;erteilen&#39;: 7,
+ &#39;errichtung&#39;: 3,
+ &#39;privaten&#39;: 4,
+ &#39;private&#39;: 3,
+ &#39;ersatz&#39;: 1,
+ &#39;öffentliche&#39;: 7,
+ &#39;bedürfen&#39;: 19,
+ &#39;genehmigung&#39;: 7,
+ &#39;unterstehen&#39;: 4,
+ &#39;landesgesetzen&#39;: 2,
+ &#39;ihren&#39;: 10,
+ &#39;lehrzielen&#39;: 1,
+ &#39;einrichtungen&#39;: 17,
+ &#39;sowie&#39;: 43,
+ &#39;wissenschaftlichen&#39;: 3,
+ &#39;ausbildung&#39;: 3,
+ &#39;ihrer&#39;: 32,
+ &#39;lehrkräfte&#39;: 2,
+ &#39;hinter&#39;: 1,
+ &#39;zurückstehen&#39;: 1,
+ &#39;sonderung&#39;: 1,
+ &#39;schüler&#39;: 1,
+ &#39;nach&#39;: 134,
+ &#39;besitzverhältnissen&#39;: 1,
+ &#39;gefördert&#39;: 1,
+ &#39;wirtschaftliche&#39;: 3,
+ &#39;rechtliche&#39;: 1,
+ &#39;genügend&#39;: 1,
+ &#39;gesichert&#39;: 1,
+ &#39;volksschule&#39;: 2,
+ &#39;zuzulassen&#39;: 1,
+ &#39;unterrichtsverwaltung&#39;: 1,
+ &#39;besonderes&#39;: 4,
+ &#39;pädagogisches&#39;: 1,
+ &#39;interesse&#39;: 4,
+ &#39;anerkennt&#39;: 1,
+ &#39;antrag&#39;: 19,
+ &#39;gemeinschaftsschule&#39;: 1,
+ &#39;bekenntnis&#39;: 3,
+ &#39;weltanschauungsschule&#39;: 1,
+ &#39;errichtet&#39;: 6,
+ &#39;soll&#39;: 12,
+ &#39;art&#39;: 5,
+ &#39;gemeinde&#39;: 1,
+ &#39;besteht&#39;: 8,
+ &#39;vorschulen&#39;: 1,
+ &#39;bleiben&#39;: 10,
+ &#39;aufgehoben&#39;: 6,
+ &#39;ohne&#39;: 10,
+ &#39;anmeldung&#39;: 1,
+ &#39;erlaubnis&#39;: 1,
+ &#39;friedlich&#39;: 1,
+ &#39;waffen&#39;: 3,
+ &#39;versammeln&#39;: 1,
+ &#39;versammlungen&#39;: 1,
+ &#39;freiem&#39;: 1,
+ &#39;himmel&#39;: 1,
+ &#39;kann&#39;: 123,
+ &#39;beschränkt&#39;: 5,
+ &#39;9&#39;: 5,
+ &#39;vereine&#39;: 1,
+ &#39;gesellschaften&#39;: 1,
+ &#39;bilden&#39;: 5,
+ &#39;vereinigungen&#39;: 3,
+ &#39;deren&#39;: 20,
+ &#39;zwecke&#39;: 8,
+ &#39;tätigkeit&#39;: 2,
+ &#39;strafgesetzen&#39;: 1,
+ &#39;zuwiderlaufen&#39;: 1,
+ &#39;verfassungsmäßige&#39;: 6,
+ &#39;gedanken&#39;: 1,
+ &#39;völkerverständigung&#39;: 1,
+ &#39;richten&#39;: 6,
+ &#39;verboten&#39;: 1,
+ &#39;wahrung&#39;: 7,
+ &#39;förderung&#39;: 6,
+ &#39;arbeits&#39;: 3,
+ &#39;wirtschaftsbedingungen&#39;: 2,
+ &#39;jedermann&#39;: 5,
+ &#39;berufe&#39;: 1,
+ &#39;abreden&#39;: 1,
+ &#39;einschränken&#39;: 2,
+ &#39;behindern&#39;: 1,
+ &#39;suchen&#39;: 1,
+ &#39;nichtig&#39;: 1,
+ &#39;hierauf&#39;: 1,
+ &#39;gerichtete&#39;: 3,
+ &#39;maßnahmen&#39;: 21,
+ &#39;rechtswidrig&#39;: 1,
+ &#39;artikeln&#39;: 5,
+ &#39;12&#39;: 5,
+ &#39;a&#39;: 33,
+ &#39;35&#39;: 2,
+ &#39;87&#39;: 10,
+ &#39;91&#39;: 7,
+ &#39;arbeitskämpfe&#39;: 1,
+ &#39;sinne&#39;: 12,
+ &#39;satzes&#39;: 3,
+ &#39;geführt&#39;: 8,
+ &#39;10&#39;: 5,
+ &#39;briefgeheimnis&#39;: 1,
+ &#39;post&#39;: 4,
+ &#39;femmeldegeheimnis&#39;: 1,
+ &#39;beschränkungen&#39;: 4,
+ &#39;angeordnet&#39;: 4,
+ &#39;dient&#39;: 4,
+ &#39;beschränkung&#39;: 3,
+ &#39;freiheitlichen&#39;: 2,
+ &#39;demokratischen&#39;: 8,
+ &#39;grundordnung&#39;: 7,
+ &#39;bestandes&#39;: 2,
+ &#39;sicherung&#39;: 5,
+ &#39;bundes&#39;: 73,
+ &#39;landes&#39;: 35,
+ &#39;so&#39;: 59,
+ &#39;betroffenen&#39;: 12,
+ &#39;mitgeteilt&#39;: 1,
+ &#39;an&#39;: 54,
+ &#39;stelle&#39;: 8,
+ &#39;rechtsweges&#39;: 2,
+ &#39;nachprüfung&#39;: 1,
+ &#39;volksvertretung&#39;: 3,
+ &#39;bestellte&#39;: 1,
+ &#39;organe&#39;: 3,
+ &#39;hilfsorgane&#39;: 1,
+ &#39;tritt&#39;: 8,
+ &#39;11&#39;: 6,
+ &#39;genießen&#39;: 2,
+ &#39;freizügigkeit&#39;: 5,
+ &#39;ganzen&#39;: 2,
+ &#39;bundesgebiet&#39;: 11,
+ &#39;fälle&#39;: 3,
+ &#39;eingeschränkt&#39;: 4,
+ &#39;denen&#39;: 8,
+ &#39;ausreichende&#39;: 2,
+ &#39;lebensgrundlage&#39;: 1,
+ &#39;vorhanden&#39;: 1,
+ &#39;allgemeinheit&#39;: 5,
+ &#39;daraus&#39;: 2,
+ &#39;besondere&#39;: 10,
+ &#39;lasten&#39;: 2,
+ &#39;entstehen&#39;: 3,
+ &#39;würden&#39;: 1,
+ &#39;es&#39;: 61,
+ &#39;abwehr&#39;: 11,
+ &#39;einer&#39;: 55,
+ &#39;drohenden&#39;: 4,
+ &#39;gefahr&#39;: 17,
+ &#39;bestand&#39;: 6,
+ &#39;freiheitliche&#39;: 5,
+ &#39;demokratische&#39;: 5,
+ &#39;bekämpfung&#39;: 6,
+ &#39;seuchengefahr&#39;: 2,
+ &#39;naturkatastrophen&#39;: 1,
+ &#39;besonders&#39;: 7,
+ &#39;schweren&#39;: 2,
+ &#39;unglücksfällen&#39;: 1,
+ &#39;jugend&#39;: 1,
+ &#39;verwahrlosung&#39;: 1,
+ &#39;um&#39;: 15,
+ &#39;strafbaren&#39;: 2,
+ &#39;handlungen&#39;: 3,
+ &#39;vorzubeugen&#39;: 1,
+ &#39;erforderlich&#39;: 18,
+ &#39;beruf&#39;: 3,
+ &#39;arbeitsplatz&#39;: 2,
+ &#39;ausbildungsstätte&#39;: 1,
+ &#39;wählen&#39;: 2,
+ &#39;berufsausübung&#39;: 1,
+ &#39;geregelt&#39;: 22,
+ &#39;bestimmten&#39;: 4,
+ &#39;arbeit&#39;: 1,
+ &#39;außer&#39;: 15,
+ &#39;rahmen&#39;: 11,
+ &#39;herkömmlichen&#39;: 1,
+ &#39;dienstleistungspflicht&#39;: 1,
+ &#39;zwangsarbeit&#39;: 1,
+ &#39;bei&#39;: 76,
+ &#39;gerichtlich&#39;: 2,
+ &#39;angeordneten&#39;: 1,
+ &#39;freiheitsentziehung&#39;: 4,
+ &#39;zulässig&#39;: 10,
+ &#39;manner&#39;: 1,
+ &#39;können&#39;: 61,
+ &#39;vollendeten&#39;: 3,
+ &#39;achtzehnten&#39;: 2,
+ &#39;lebensjahr&#39;: 4,
+ &#39;dienst&#39;: 8,
+ &#39;streitkräften&#39;: 4,
+ &#39;bundesgrenzschutz&#39;: 3,
+ &#39;zivilschutzverband&#39;: 1,
+ &#39;wer&#39;: 11,
+ &#39;gewissensgründen&#39;: 1,
+ &#39;verweigert&#39;: 1,
+ &#39;ersatzdienst&#39;: 2,
+ &#39;dauer&#39;: 4,
+ &#39;ersatzdienstes&#39;: 4,
+ &#39;wehrdienstes&#39;: 1,
+ &#39;übersteigen&#39;: 1,
+ &#39;nähere&#39;: 36,
+ &#39;gewissensentscheidung&#39;: 1,
+ &#39;beeinträchtigen&#39;: 2,
+ &#39;auch&#39;: 40,
+ &#39;möglichkeit&#39;: 1,
+ &#39;vorsehen&#39;: 7,
+ &#39;muß&#39;: 13,
+ &#39;keinem&#39;: 3,
+ &#39;zusammenhang&#39;: 3,
+ &#39;verbänden&#39;: 1,
+ &#39;streitkräfte&#39;: 14,
+ &#39;bundesgrenzschutzes&#39;: 7,
+ &#39;wehrpflichtige&#39;: 1,
+ &#39;herangezogen&#39;: 2,
+ &#39;verteidigungsfalle&#39;: 13,
+ &#39;zivilen&#39;: 4,
+ &#39;dienstleistungen&#39;: 6,
+ &#39;verteidigung&#39;: 12,
+ &#39;einschließlich&#39;: 14,
+ &#39;schutzes&#39;: 6,
+ &#39;zivil&#39;: 1,
+ &#39;bevölkerung&#39;: 1,
+ &#39;arbeitsverhältnisse&#39;: 3,
+ &#39;verpflichtungen&#39;: 5,
+ &#39;öffentlichrechtliche&#39;: 2,
+ &#39;dienstverhaltnisse&#39;: 1,
+ &#39;wahrnehmung&#39;: 5,
+ &#39;polizeilicher&#39;: 2,
+ &#39;aufgaben&#39;: 24,
+ &#39;solcher&#39;: 5,
+ &#39;hoheitlichen&#39;: 1,
+ &#39;verwaltung&#39;: 25,
+ &#39;öffentlichrechtlichen&#39;: 4,
+ &#39;dienstverhaltnis&#39;: 1,
+ &#39;erfüllt&#39;: 2,
+ &#39;satz&#39;: 43,
+ &#39;bereich&#39;: 9,
+ &#39;versorgung&#39;: 4,
+ &#39;begründet&#39;: 3,
+ &#39;bereiche&#39;: 3,
+ &#39;zivilbevölkerung&#39;: 5,
+ &#39;iebensnotwendigen&#39;: 1,
+ &#39;bedarf&#39;: 46,
+ &#39;decken&#39;: 2,
+ &#39;sicherzustellen&#39;: 3,
+ &#39;sanitäts&#39;: 1,
+ &#39;heilwesen&#39;: 1,
+ &#39;ortsfesten&#39;: 1,
+ &#39;militarischen&#39;: 1,
+ &#39;lazarettorganisation&#39;: 1,
+ &#39;freiwilliger&#39;: 2,
+ &#39;gedeckt&#39;: 2,
+ &#39;fünfundfünfzigsten&#39;: 1,
+ &#39;derartigen&#39;: 1,
+ &#39;keinen&#39;: 4,
+ &#39;fall&#39;: 4,
+ &#39;zeit&#39;: 5,
+ &#39;maßgabe&#39;: 16,
+ &#39;artikels&#39;: 25,
+ &#39;80&#39;: 3,
+ &#39;vorbereitung&#39;: 4,
+ &#39;kenntnisse&#39;: 1,
+ &#39;fertigkeiten&#39;: 1,
+ &#39;ausbildungsveranstaltungen&#39;: 1,
+ &#39;gemacht&#39;: 4,
+ &#39;insoweit&#39;: 7,
+ &#39;keine&#39;: 12,
+ &#39;anwendung&#39;: 24,
+ &#39;arbeitskräften&#39;: 1,
+ &#39;genannten&#39;: 7,
+ &#39;bedarfs&#39;: 1,
+ &#39;ausübung&#39;: 9,
+ &#39;berufs&#39;: 1,
+ &#39;aufzugeben&#39;: 1,
+ &#39;eingeschrdnkt&#39;: 2,
+ &#39;eintrift&#39;: 1,
+ &#39;verteidigungsfalles&#39;: 14,
+ &#39;entsprechend&#39;: 9,
+ &#39;13&#39;: 3,
+ &#39;wohnung&#39;: 2,
+ &#39;durchsuchungen&#39;: 1,
+ &#39;richter&#39;: 19,
+ &#39;verzuge&#39;: 5,
+ &#39;gesetzen&#39;: 4,
+ &#39;vorgesehenen&#39;: 5,
+ &#39;dort&#39;: 2,
+ &#39;vorgeschriebenen&#39;: 2,
+ &#39;form&#39;: 3,
+ &#39;durchgeführt&#39;: 3,
+ &#39;begründen&#39;: 2,
+ &#39;bestimmte&#39;: 5,
+ &#39;tatsachen&#39;: 4,
+ &#39;verdacht&#39;: 1,
+ &#39;jemand&#39;: 3,
+ &#39;einzeln&#39;: 2,
+ &#39;schwere&#39;: 1,
+ &#39;straftat&#39;: 1,
+ &#39;begangen&#39;: 2,
+ &#39;verfolgung&#39;: 2,
+ &#39;tat&#39;: 5,
+ &#39;richterlicher&#39;: 4,
+ &#39;anordnung&#39;: 7,
+ &#39;technische&#39;: 3,
+ &#39;mittel&#39;: 8,
+ &#39;akustischen&#39;: 1,
+ &#39;überwachung&#39;: 1,
+ &#39;wohnungen&#39;: 3,
+ &#39;beschuldigte&#39;: 1,
+ &#39;vermutlich&#39;: 1,
+ &#39;aufhält&#39;: 1,
+ &#39;eingesetzt&#39;: 3,
+ &#39;erforschung&#39;: 1,
+ &#39;sachverhalts&#39;: 1,
+ &#39;andere&#39;: 16,
+ &#39;weise&#39;: 3,
+ &#39;unverhältnismäßig&#39;: 1,
+ &#39;erschwert&#39;: 1,
+ &#39;aussichtslos&#39;: 1,
+ &#39;wäre&#39;: 1,
+ &#39;maßnahme&#39;: 6,
+ &#39;befristen&#39;: 1,
+ &#39;erfolgt&#39;: 8,
+ &#39;einen&#39;: 29,
+ &#39;drei&#39;: 7,
+ &#39;richtern&#39;: 3,
+ &#39;besetzten&#39;: 1,
+ &#39;spruchkörper&#39;: 1,
+ &#39;einzelnen&#39;: 6,
+ &#39;getroffen&#39;: 5,
+ &#39;dringender&#39;: 2,
+ &#39;gefahren&#39;: 3,
+ &#39;sicherheit&#39;: 5,
+ &#39;insbesondere&#39;: 11,
+ &#39;gemeinen&#39;: 2,
+ &#39;lebensgefahr&#39;: 2,
+ &#39;uberwachung&#39;: 1,
+ &#39;gesetzlich&#39;: 8,
+ &#39;richterliche&#39;: 4,
+ &#39;entscheidung&#39;: 18,
+ &#39;unverzüglich&#39;: 12,
+ &#39;nachzuholen&#39;: 3,
+ &#39;ausschließlich&#39;: 2,
+ &#39;einsatz&#39;: 3,
+ &#39;tätigen&#39;: 2,
+ &#39;personen&#39;: 12,
+ &#39;vorgesehen&#39;: 5,
+ &#39;anderweitige&#39;: 1,
+ &#39;verwertung&#39;: 1,
+ &#39;hierbei&#39;: 5,
+ &#39;erlangten&#39;: 1,
+ &#39;erkenntnisse&#39;: 1,
+ &#39;strafverfolgung&#39;: 1,
+ &#39;gefahrenabwehr&#39;: 1,
+ &#39;zuvor&#39;: 1,
+ &#39;rechtmäßigkeit&#39;: 2,
+ &#39;richterlich&#39;: 2,
+ &#39;bundesregierung&#39;: 84,
+ &#39;unterrichtet&#39;: 1,
+ &#39;bundestag&#39;: 55,
+ &#39;jährlich&#39;: 2,
+ &#39;zuständigkeitsbereich&#39;: 4,
+ &#39;überprüfungsbedürftig&#39;: 1,
+ &#39;erfolgten&#39;: 1,
+ &#39;technischer&#39;: 1,
+ &#39;gewähltes&#39;: 1,
+ &#39;gremium&#39;: 1,
+ &#39;übt&#39;: 4,
+ &#39;berichts&#39;: 1,
+ &#39;kontrolle&#39;: 3,
+ &#39;gewährleisten&#39;: 3,
+ &#39;gleichwertige&#39;: 1,
+ &#39;eingriffe&#39;: 2,
+ &#39;übrigen&#39;: 13,
+ &#39;einzelne&#39;: 2,
+ &#39;verhütung&#39;: 2,
+ &#39;behebung&#39;: 1,
+ &#39;raumnot&#39;: 2,
+ &#39;gefährdeter&#39;: 1,
+ &#39;jugendlicher&#39;: 1,
+ &#39;vorgenommen&#39;: 3,
+ &#39;14&#39;: 5,
+ &#39;eigentum&#39;: 6,
+ &#39;erbrecht&#39;: 1,
+ &#39;inhalt&#39;: 3,
+ &#39;bestimmt&#39;: 39,
+ &#39;gebrauch&#39;: 2,
+ &#39;zugleich&#39;: 1,
+ &#39;wohle&#39;: 3,
+ &#39;enteignung&#39;: 2,
+ &#39;zulassig&#39;: 1,
+ &#39;erfolgen&#39;: 4,
+ &#39;ausmaß&#39;: 4,
+ &#39;entschadigung&#39;: 1,
+ &#39;entschädigung&#39;: 5,
+ &#39;gerechter&#39;: 1,
+ &#39;abwägung&#39;: 1,
+ &#39;interessen&#39;: 2,
+ &#39;höhe&#39;: 5,
+ &#39;streitfall&#39;: 1,
+ &#39;rechtsweg&#39;: 6,
+ &#39;ordentlichen&#39;: 2,
+ &#39;gerichten&#39;: 1,
+ &#39;offen&#39;: 3,
+ &#39;15&#39;: 3,
+ &#39;boden&#39;: 2,
+ &#39;naturschätze&#39;: 1,
+ &#39;produktionsmittel&#39;: 1,
+ &#39;vergesellschaftung&#39;: 1,
+ &#39;gemeineigentum&#39;: 2,
+ &#39;formen&#39;: 4,
+ &#39;gemeinwirtschaft&#39;: 2,
+ &#39;überführt&#39;: 1,
+ &#39;staatsangehörigkeit&#39;: 6,
+ &#39;entzogen&#39;: 5,
+ &#39;verlust&#39;: 1,
+ &#39;dann&#39;: 2,
+ &#39;eintreten&#39;: 1,
+ &#39;betroffene&#39;: 2,
+ &#39;dadurch&#39;: 4,
+ &#39;staatenlos&#39;: 1,
+ &#39;deutscher&#39;: 3,
+ &#39;ausland&#39;: 3,
+ &#39;ausgeliefert&#39;: 1,
+ &#39;abweichende&#39;: 4,
+ &#39;regelung&#39;: 21,
+ &#39;auslieferungen&#39;: 1,
+ &#39;mitgliedstaat&#39;: 3,
+ &#39;europäischen&#39;: 18,
+ &#39;union&#39;: 10,
+ &#39;internationalen&#39;: 2,
+ &#39;gerichtshof&#39;: 2,
+ &#39;rechtsstaatliche&#39;: 1,
+ &#39;grundsätze&#39;: 10,
+ &#39;gewahrt&#39;: 2,
+ &#39;politisch&#39;: 2,
+ &#39;verfolgte&#39;: 2,
+ &#39;asylrecht&#39;: 2,
+ &#39;berufen&#39;: 2,
+ &#39;gemeinschaften&#39;: 5,
+ &#39;drittstaat&#39;: 1,
+ &#39;einreist&#39;: 1,
+ &#39;abkommens&#39;: 1,
+ &#39;rechtsstellung&#39;: 6,
+ &#39;elüchtlinge&#39;: 1,
+ &#39;konvention&#39;: 2,
+ &#39;menschenrechte&#39;: 2,
+ &#39;grundfreiheiten&#39;: 2,
+ &#39;sichergestellt&#39;: 2,
+ &#39;staaten&#39;: 6,
+ &#39;außerhalb&#39;: 3,
+ &#39;voraussetzungen&#39;: 8,
+ &#39;zutreffen&#39;: 1,
+ &#39;zustimmung&#39;: 96,
+ &#39;bundesrates&#39;: 95,
+ &#39;fällen&#39;: 13,
+ &#39;aufenthaltsbeendende&#39;: 1,
+ &#39;unabhängig&#39;: 6,
+ &#39;hiergegen&#39;: 1,
+ &#39;eingelegten&#39;: 1,
+ &#39;rechtsbehelf&#39;: 1,
+ &#39;vollzogen&#39;: 1,
+ &#39;rechtslage&#39;: 1,
+ &#39;rechtsanwendung&#39;: 1,
+ &#39;verhältnisse&#39;: 6,
+ &#39;erscheint&#39;: 1,
+ &#39;weder&#39;: 9,
+ &#39;politische&#39;: 1,
+ &#39;noch&#39;: 11,
+ &#39;unmenschliche&#39;: 1,
+ &#39;erniedrigende&#39;: 1,
+ &#39;bestrafüng&#39;: 1,
+ &#39;behandlung&#39;: 2,
+ &#39;stattfindet&#39;: 2,
+ &#39;vermutet&#39;: 1,
+ &#39;ausländer&#39;: 2,
+ &#39;solchen&#39;: 3,
+ &#39;verfolgt&#39;: 3,
+ &#39;solange&#39;: 4,
+ &#39;vorträgt&#39;: 1,
+ &#39;annahme&#39;: 4,
+ &#39;entgegen&#39;: 3,
+ &#39;vermutung&#39;: 1,
+ &#39;vollziehung&#39;: 1,
+ &#39;aufenthaltsbeendender&#39;: 1,
+ &#39;absatzes&#39;: 12,
+ &#39;offensichtlich&#39;: 2,
+ &#39;unbegründet&#39;: 2,
+ &#39;gelten&#39;: 11,
+ &#39;gericht&#39;: 5,
+ &#39;ausgesetzt&#39;: 1,
+ &#39;ernstliche&#39;: 1,
+ &#39;zweifel&#39;: 1,
+ &#39;bestehen&#39;: 4,
+ &#39;prüfungsumfang&#39;: 1,
+ &#39;verspätetes&#39;: 1,
+ &#39;vorbringen&#39;: 1,
+ &#39;unberücksichtigt&#39;: 3,
+ &#39;absätze&#39;: 8,
+ &#39;völkerrechtlichen&#39;: 2,
+ &#39;verträgen&#39;: 2,
+ &#39;mitgliedstaaten&#39;: 1,
+ &#39;untereinander&#39;: 1,
+ &#39;dritten&#39;: 2,
+ &#39;beachtung&#39;: 2,
+ &#39;abkommen&#39;: 1,
+ &#39;flüchtlinge&#39;: 5,
+ &#39;vertragsstaaten&#39;: 1,
+ &#39;zuständigkeitsregelungen&#39;: 1,
+ &#39;prüfüng&#39;: 1,
+ &#39;asylbegehren&#39;: 1,
+ &#39;gegenseitigen&#39;: 1,
+ &#39;anerkennung&#39;: 1,
+ &#39;asylentscheidungen&#39;: 1,
+ &#39;treffen&#39;: 9,
+ &#39;17&#39;: 5,
+ &#39;schriftlich&#39;: 1,
+ &#39;bitten&#39;: 3,
+ &#39;beschwerden&#39;: 4,
+ &#39;zuständigen&#39;: 16,
+ &#39;stellen&#39;: 6,
+ &#39;wenden&#39;: 2,
+ &#39;wehrdienst&#39;: 1,
+ &#39;angehörigen&#39;: 3,
+ &#39;während&#39;: 5,
+ &#39;wehr&#39;: 1,
+ &#39;grundrecht&#39;: 5,
+ &#39;erster&#39;: 1,
+ &#39;halbsatz&#39;: 2,
+ &#39;versammlungsfreiheit&#39;: 2,
+ &#39;petitionsrecht&#39;: 1,
+ &#39;gewährt&#39;: 3,
+ &#39;vorzubringen&#39;: 1,
+ &#39;unverletzlichkeit&#39;: 1,
+ &#39;18&#39;: 5,
+ &#39;meinungsäußerung&#39;: 1,
+ &#39;lehrfreiheit&#39;: 1,
+ &#39;vereinigungsfreiheit&#39;: 1,
+ &#39;brief&#39;: 2,
+ &#39;fernmeldegeheimnis&#39;: 2,
+ &#39;kampfe&#39;: 1,
+ &#39;mißbraucht&#39;: 1,
+ &#39;verwirkt&#39;: 1,
+ &#39;verwirkung&#39;: 1,
+ &#39;ihr&#39;: 7,
+ &#39;bundesverfassungsgericht&#39;: 16,
+ &#39;ausgesprochen&#39;: 1,
+ &#39;19&#39;: 5,
+ &#39;diesem&#39;: 25,
+ &#39;einzelfall&#39;: 1,
+ &#39;außerdem&#39;: 3,
+ &#39;angabe&#39;: 1,
+ &#39;nennen&#39;: 1,
+ &#39;falle&#39;: 8,
+ &#39;seinem&#39;: 6,
+ &#39;wesensgehalt&#39;: 1,
+ &#39;angetastet&#39;: 1,
+ &#39;inländische&#39;: 1,
+ &#39;juristische&#39;: 1,
+ &#39;ihrem&#39;: 4,
+ &#39;wesen&#39;: 1,
+ &#39;anwendbar&#39;: 1,
+ &#39;rechten&#39;: 2,
+ &#39;ihm&#39;: 18,
+ &#39;zuständigkeit&#39;: 3,
+ &#39;ordentliche&#39;: 2,
+ &#39;bleibt&#39;: 9,
+ &#39;unberührt&#39;: 7,
+ &#39;ii&#39;: 2,
+ &#39;bund&#39;: 85,
+ &#39;20&#39;: 5,
+ &#39;demokratischer&#39;: 1,
+ &#39;sozialer&#39;: 1,
+ &#39;bundesstaat&#39;: 1,
+ &#39;staatsgewalt&#39;: 1,
+ &#39;geht&#39;: 5,
+ &#39;volke&#39;: 3,
+ &#39;wahlen&#39;: 4,
+ &#39;abstimmungen&#39;: 1,
+ &#39;vollziehenden&#39;: 1,
+ &#39;ausgeübt&#39;: 4,
+ &#39;gebunden&#39;: 4,
+ &#39;jeden&#39;: 1,
+ &#39;unternimmt&#39;: 1,
+ &#39;beseitigen&#39;: 2,
+ &#39;widerstand&#39;: 1,
+ &#39;abhilfe&#39;: 1,
+ &#39;möglich&#39;: 2,
+ &#39;schützt&#39;: 1,
+ &#39;künftigen&#39;: 2,
+ &#39;generationen&#39;: 1,
+ &#39;natürlichen&#39;: 1,
+ &#39;lebensgrundlagen&#39;: 1,
+ &#39;tiere&#39;: 1,
+ &#39;verfassungsmäßigen&#39;: 2,
+ &#39;21&#39;: 2,
+ &#39;parteien&#39;: 2,
+ &#39;wirken&#39;: 4,
+ &#39;willensbildung&#39;: 3,
+ &#39;volks&#39;: 1,
+ &#39;gründung&#39;: 1,
+ &#39;innere&#39;: 1,
+ &#39;entsprechen&#39;: 3,
+ &#39;müssen&#39;: 8,
+ &#39;verwendung&#39;: 1,
+ &#39;vermögen&#39;: 10,
+ &#39;öffentlich&#39;: 3,
+ &#39;rechenschaft&#39;: 1,
+ &#39;geben&#39;: 2,
+ &#39;zielen&#39;: 1,
+ &#39;verhalten&#39;: 1,
+ &#39;anhänger&#39;: 1,
+ &#39;darauf&#39;: 4,
+ &#39;ausgehen&#39;: 1,
+ &#39;gefährden&#39;: 3,
+ &#39;verfassungswidrig&#39;: 3,
+ &#39;frage&#39;: 2,
+ &#39;verfassungswidrigkeit&#39;: 1,
+ &#39;entscheidet&#39;: 10,
+ &#39;regeln&#39;: 13,
+ &#39;bundesgesetze&#39;: 18,
+ &#39;bundesflagge&#39;: 1,
+ &#39;schwarzrotgold&#39;: 1,
+ &#39;verwirklichung&#39;: 1,
+ &#39;europas&#39;: 1,
+ &#39;rechtsstaatlichen&#39;: 1,
+ &#39;sozialen&#39;: 3,
+ &#39;föderativen&#39;: 1,
+ &#39;grundsatz&#39;: 1,
+ &#39;subsidiarität&#39;: 1,
+ &#39;wesentlichen&#39;: 1,
+ &#39;vergleichbaren&#39;: 1,
+ &#39;grundrechtsschutz&#39;: 1,
+ &#39;hierzu&#39;: 3,
+ &#39;hoheitsrechte&#39;: 4,
+ &#39;übertragen&#39;: 21,
+ &#39;begründung&#39;: 1,
+ &#39;änderungen&#39;: 4,
+ &#39;vertraglichen&#39;: 1,
+ &#39;grundlagen&#39;: 3,
+ &#39;vergleichbare&#39;: 1,
+ &#39;regelungen&#39;: 5,
+ &#39;ergänzt&#39;: 2,
+ &#39;solche&#39;: 6,
+ &#39;ergänzungen&#39;: 1,
+ &#39;ermöglicht&#39;: 1,
+ &#39;79&#39;: 3,
+ &#39;angelegenheiten&#39;: 14,
+ &#39;bundesrat&#39;: 39,
+ &#39;umfassend&#39;: 1,
+ &#39;frühestmöglichen&#39;: 1,
+ ...}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="worthaufigkeiten-sortieren">
+<h2>Worthäufigkeiten sortieren<a class="headerlink" href="#worthaufigkeiten-sortieren" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">freq_sort</span><span class="p">(</span><span class="n">list_to_search</span><span class="p">):</span>
+    <span class="n">counts</span> <span class="o">=</span> <span class="n">counter_dict</span><span class="p">(</span><span class="n">list_to_search</span><span class="p">)</span>
+    <span class="n">counts</span> <span class="o">=</span> <span class="p">[(</span><span class="n">counts</span><span class="p">[</span><span class="n">key</span><span class="p">],</span> <span class="n">key</span><span class="p">)</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">counts</span><span class="p">]</span>
+    <span class="n">counts</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+    <span class="n">counts</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">counts</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">freq_sort</span><span class="p">(</span><span class="n">grundgesetz_words</span><span class="p">)[:</span><span class="mi">25</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(932, &#39;der&#39;),
+ (859, &#39;die&#39;),
+ (577, &#39;und&#39;),
+ (495, &#39;des&#39;),
+ (303, &#39;das&#39;),
+ (283, &#39;den&#39;),
+ (269, &#39;oder&#39;),
+ (263, &#39;artikel&#39;),
+ (241, &#39;in&#39;),
+ (219, &#39;1&#39;),
+ (207, &#39;werden&#39;),
+ (201, &#39;2&#39;),
+ (192, &#39;zu&#39;),
+ (189, &#39;von&#39;),
+ (176, &#39;durch&#39;),
+ (162, &#39;für&#39;),
+ (160, &#39;ist&#39;),
+ (154, &#39;auf&#39;),
+ (139, &#39;dem&#39;),
+ (134, &#39;nach&#39;),
+ (132, &#39;im&#39;),
+ (131, &#39;3&#39;),
+ (128, &#39;mit&#39;),
+ (123, &#39;kann&#39;),
+ (120, &#39;nicht&#39;)]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="entfernen-von-stoppwortern">
+<h2>Entfernen von Stoppwörtern<a class="headerlink" href="#entfernen-von-stoppwortern" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">remove_stopwords</span><span class="p">(</span><span class="n">list_to_search</span><span class="p">):</span>
+    <span class="n">stopword_url</span> <span class="o">=</span> <span class="s2">&quot;http://members.unine.ch/jacques.savoy/clef/germanST.txt&quot;</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">stopword_url</span><span class="p">)</span>
+    <span class="n">stopwords</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span>
+    <span class="n">stopwords</span> <span class="o">=</span> <span class="n">stopwords</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">w</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">list_to_search</span> <span class="k">if</span> <span class="n">w</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">stopwords</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">remove_stopwords</span><span class="p">(</span><span class="n">grundgesetz_words</span><span class="p">)[:</span><span class="mi">25</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;grundgesetz&#39;,
+ &#39;bundesrepublik&#39;,
+ &#39;deutschland&#39;,
+ &#39;23&#39;,
+ &#39;mai&#39;,
+ &#39;1949&#39;,
+ &#39;bgbl&#39;,
+ &#39;1&#39;,
+ &#39;zuletzt&#39;,
+ &#39;geändert&#39;,
+ &#39;gesetz&#39;,
+ &#39;änderung&#39;,
+ &#39;grundgesetzes&#39;,
+ &#39;artikel&#39;,
+ &#39;96&#39;,
+ &#39;26&#39;,
+ &#39;7&#39;,
+ &#39;2002&#39;,
+ &#39;bgbl&#39;,
+ &#39;2863&#39;,
+ &#39;parlamentarische&#39;,
+ &#39;rat&#39;,
+ &#39;23&#39;,
+ &#39;mai&#39;,
+ &#39;1949&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="entfernen-von-zahlen-mit-regularem-ausdruck">
+<h2>Entfernen von Zahlen mit regulärem Ausdruck<a class="headerlink" href="#entfernen-von-zahlen-mit-regularem-ausdruck" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="n">RE_INT</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\d+&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">remove_digit</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">RE_INT</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="funktionsaufrufe">
+<h2>Funktionsaufrufe<a class="headerlink" href="#funktionsaufrufe" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grundgesetz</span> <span class="o">=</span> <span class="n">grundgesetz</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="n">grundgesetz</span> <span class="o">=</span> <span class="n">remove_punctuation</span><span class="p">(</span><span class="n">grundgesetz</span><span class="p">)</span>
+<span class="n">grundgesetz</span> <span class="o">=</span> <span class="n">remove_digit</span><span class="p">(</span><span class="n">grundgesetz</span><span class="p">)</span>
+<span class="n">grundgesetz_words</span> <span class="o">=</span> <span class="n">grundgesetz</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="n">grundgesetz_words</span> <span class="o">=</span> <span class="n">remove_stopwords</span><span class="p">(</span><span class="n">grundgesetz_words</span><span class="p">)</span>
+<span class="n">freq_sort</span><span class="p">(</span><span class="n">grundgesetz_words</span><span class="p">)[:</span><span class="mi">25</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(263, &#39;artikel&#39;),
+ (112, &#39;länder&#39;),
+ (99, &#39;absatz&#39;),
+ (96, &#39;zustimmung&#39;),
+ (95, &#39;bundesrates&#39;),
+ (85, &#39;bund&#39;),
+ (84, &#39;bundesregierung&#39;),
+ (80, &#39;soweit&#39;),
+ (78, &#39;bundesgesetz&#39;),
+ (73, &#39;bundes&#39;),
+ (65, &#39;gesetz&#39;),
+ (58, &#39;bundestages&#39;),
+ (57, &#39;ländern&#39;),
+ (55, &#39;bundestag&#39;),
+ (46, &#39;bedarf&#39;),
+ (43, &#39;satz&#39;),
+ (42, &#39;gemeinden&#39;),
+ (41, &#39;mehrheit&#39;),
+ (39, &#39;gesetze&#39;),
+ (39, &#39;bundesrat&#39;),
+ (39, &#39;bestimmt&#39;),
+ (38, &#39;grund&#39;),
+ (37, &#39;mitglieder&#39;),
+ (36, &#39;nähere&#39;),
+ (35, &#39;landes&#39;)]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "base2exp"
+        },
+        kernelOptions: {
+            kernelName: "base2exp",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'base2exp'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="03-Pseudocode.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Pseudo-Code</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="05-NLTK-Visualisieren.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">NLTK und Worthäufigkeiten visualisieren</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Martin Dröge<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
